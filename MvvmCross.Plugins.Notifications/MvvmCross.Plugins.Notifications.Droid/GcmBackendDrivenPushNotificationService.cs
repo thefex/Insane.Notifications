@@ -1,4 +1,3 @@
-using System;
 using Android.Content;
 using Gcm.Client;
 using MvvmCross.Platform;
