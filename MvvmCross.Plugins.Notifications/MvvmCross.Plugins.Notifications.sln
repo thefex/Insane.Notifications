@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross.Plugins.Notifications", "MvvmCross.Plugins.Notifications\MvvmCross.Plugins.Notifications.csproj", "{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross.Plugins.Notifications.Droid", "MvvmCross.Plugins.Notifications.Droid\MvvmCross.Plugins.Notifications.Droid.csproj", "{EF89FA96-9597-48CF-B7A1-5DBF4CDC22BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF89FA96-9597-48CF-B7A1-5DBF4CDC22BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF89FA96-9597-48CF-B7A1-5DBF4CDC22BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF89FA96-9597-48CF-B7A1-5DBF4CDC22BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF89FA96-9597-48CF-B7A1-5DBF4CDC22BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
