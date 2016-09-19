@@ -12,11 +12,12 @@ namespace MvvmCross.Plugins.Notifications.iOS
             IBackendPushRegistrationService backendPushRegistrationService, IPushTagsProvider pushTagsProvider)
             : base(persistedStorage, backendPushRegistrationService, pushTagsProvider)
         {
-
         }
 
         protected override PushPlatformType PlatformType => PushPlatformType.iOS;
-        protected override bool IsUserRegisteredToPushService => UIApplication.SharedApplication.IsRegisteredForRemoteNotifications;
+
+        protected override bool IsUserRegisteredToPushService
+            => UIApplication.SharedApplication.IsRegisteredForRemoteNotifications;
 
         protected override void LaunchRegistrationProcess()
         {
@@ -31,9 +32,9 @@ namespace MvvmCross.Plugins.Notifications.iOS
             }
             else
             {
-                UIRemoteNotificationType notificationTypes = UIRemoteNotificationType.Alert |
-                                                             UIRemoteNotificationType.Badge |
-                                                             UIRemoteNotificationType.Sound;
+                var notificationTypes = UIRemoteNotificationType.Alert |
+                                        UIRemoteNotificationType.Badge |
+                                        UIRemoteNotificationType.Sound;
                 UIApplication.SharedApplication.RegisterForRemoteNotificationTypes(notificationTypes);
             }
         }

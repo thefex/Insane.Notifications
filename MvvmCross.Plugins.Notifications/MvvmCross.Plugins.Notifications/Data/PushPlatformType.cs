@@ -1,9 +1,9 @@
 ﻿namespace MvvmCross.Plugins.Notifications.Data
 {
-	public enum PushPlatformType
-	{
-		Windows,
-		iOS,
-		Android
-	}
+    public enum PushPlatformType
+    {
+        Windows,
+        iOS,
+        Android
+    }
 }

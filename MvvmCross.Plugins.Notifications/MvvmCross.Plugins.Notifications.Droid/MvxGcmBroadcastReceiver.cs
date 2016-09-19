@@ -4,18 +4,15 @@ using MvvmCross.Droid.Platform;
 
 namespace MvvmCross.Plugins.Notifications.Droid
 {
-	public abstract class MvxGcmBroadcastReceiver<TMvxGcmService> : GcmBroadcastReceiverBase<TMvxGcmService> where TMvxGcmService : MvxGcmService
-	{
-		protected MvxGcmBroadcastReceiver()
-		{
-		}
+    public abstract class MvxGcmBroadcastReceiver<TMvxGcmService> : GcmBroadcastReceiverBase<TMvxGcmService>
+        where TMvxGcmService : MvxGcmService
+    {
+        public override void OnReceive(Context context, Intent intent)
+        {
+            var setup = MvxAndroidSetupSingleton.EnsureSingletonAvailable(context);
+            setup.EnsureInitialized();
 
-		public override void OnReceive(Context context, Intent intent)
-		{
-			var setup = MvxAndroidSetupSingleton.EnsureSingletonAvailable(context);
-			setup.EnsureInitialized();
-
-			base.OnReceive(context, intent);
-		}
-	}
+            base.OnReceive(context, intent);
+        }
+    }
 }
