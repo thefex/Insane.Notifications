@@ -5,7 +5,7 @@ using MvvmCross.Plugins.Notifications.CachedStorage;
 using MvvmCross.Plugins.Notifications.Data;
 using MvvmCross.Plugins.Notifications.PushNotifications;
 
-namespace MvvmCross.Plugins.Notifications.Droid
+namespace MvvmCross.Plugins.Notifications.Droid.GCM
 {
     public class GcmBackendDrivenPushNotificationService : BackendDrivenPushNotificationService
     {

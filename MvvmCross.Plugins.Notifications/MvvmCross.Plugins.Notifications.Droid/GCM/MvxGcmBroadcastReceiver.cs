@@ -2,7 +2,7 @@ using Android.Content;
 using Gcm.Client;
 using MvvmCross.Droid.Platform;
 
-namespace MvvmCross.Plugins.Notifications.Droid
+namespace MvvmCross.Plugins.Notifications.Droid.GCM
 {
     public abstract class MvxGcmBroadcastReceiver<TMvxGcmService> : GcmBroadcastReceiverBase<TMvxGcmService>
         where TMvxGcmService : MvxGcmService

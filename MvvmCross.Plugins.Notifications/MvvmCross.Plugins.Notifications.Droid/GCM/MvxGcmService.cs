@@ -4,7 +4,7 @@ using Gcm.Client;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Platform;
 
-namespace MvvmCross.Plugins.Notifications.Droid
+namespace MvvmCross.Plugins.Notifications.Droid.GCM
 {
     public abstract class MvxGcmService : GcmServiceBase
     {
