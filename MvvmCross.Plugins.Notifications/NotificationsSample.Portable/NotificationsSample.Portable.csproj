@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}</ProjectGuid>
+    <ProjectGuid>{CA08017B-0878-482E-AD93-034EFB6F5DB8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmCross.Plugins.Notifications</RootNamespace>
-    <AssemblyName>MvvmCross.Plugins.Notifications</AssemblyName>
+    <RootNamespace>NotificationsSample.Portable</RootNamespace>
+    <AssemblyName>NotificationsSample.Portable</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,21 +34,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="LocalNotifications\" />
+    <Compile Include="Data\LocalNotificationData.cs" />
+    <Compile Include="MvxApp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LocalNotificationsProvider.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CachedStorage\IPersistedStorage.cs" />
-    <Compile Include="Data\ErrorMessagesConstants.cs" />
-    <Compile Include="Data\PushPlatformType.cs" />
-    <Compile Include="Data\PushSubscribeDetails.cs" />
-    <Compile Include="Data\ServiceResponse.cs" />
-    <Compile Include="Data\ServiceResponseExtensions.cs" />
-    <Compile Include="INotificationsService.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PushNotifications\BackendDrivenPushNotificationService.cs" />
-    <Compile Include="PushNotifications\IBackendPushRegistrationService.cs" />
-    <Compile Include="PushNotifications\IPushTagsProvider.cs" />
+    <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Core.4.2.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.4.2.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvvmCross.Plugins.Notifications\MvvmCross.Plugins.Notifications.csproj">
+      <Project>{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}</Project>
+      <Name>MvvmCross.Plugins.Notifications</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
