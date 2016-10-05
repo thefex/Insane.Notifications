@@ -99,9 +99,6 @@
     <Compile Include="ToRemove\MvxBroadcastReceivers.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\MvvmCross.Plugins.Notifications\MvvmCross.Plugins.Notifications.csproj">
       <Project>{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}</Project>
       <Name>MvvmCross.Plugins.Notifications</Name>
@@ -112,6 +109,10 @@
       <Visible>False</Visible>
       <Version>1.0</Version>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="project.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

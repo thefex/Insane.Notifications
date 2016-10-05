@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata minClientVersion="3.2">
+        <title>MvvmCross.Plugins.Notifications</title>
+        <id>MvvmCross.Plugins.Notifications</id>
+        <version>1.0.0-beta2</version>
+        <authors>Przemysław Raciborski [thefex], Erlend Angelsen [erlend]</authors>
+        <description>MvvmCross Plugin which simplifies creating and handling Notifications</description>
+        <dependencies>
+          <group targetFramework="monoandroid60">
+            <dependency id="MvvmCross.Binding" version="4.2.3"/>
+            <dependency id="MvvmCross.Core" version="4.2.3"/>
+            <dependency id="MvvmCross.Droid.Shared" version="4.2.3"/>
+            <dependency id="MvvmCross.Droid.Support.V4" version="4.2.3"/>
+            <dependency id="MvvmCross.Platform" version="4.2.3"/>
+            <dependency id="Xamarin.Android.Support.v4" version="23.4.0.1"/>
+          </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="MvvmCross.Plugins.Notifications.Droid\bin\Release\MvvmCross.Plugins.Notifications.Droid.dll" target="lib\MonoAndroid" />
+        <file src="MvvmCross.Plugins.Notifications.iOS\bin\Release\MvvmCross.Plugins.Notifications.iOS.dll" target="lib\Xamarin.iOS10"/>
+        <file src="MvvmCross.Plugins.Notifications\bin\Release\MvvmCross.Plugins.Notifications.dll" target="lib\portable-net45+win8+wp8+wpa81" />
+    </files>
+</package>
