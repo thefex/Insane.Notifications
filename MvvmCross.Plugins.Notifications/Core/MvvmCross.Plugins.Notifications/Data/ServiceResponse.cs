@@ -39,7 +39,7 @@ namespace MvvmCross.Plugins.Notifications.Data
 
     public sealed class ServiceResponse<TResult> : ServiceResponse
     {
-        private ServiceResponse()
+        public ServiceResponse()
         {
         }
 

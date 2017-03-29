@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Android.Content;
 using Gcm.Client;
 using MvvmCross.Platform;
@@ -22,18 +23,20 @@ namespace MvvmCross.Plugins.Notifications.Droid.GCM
         protected override PushPlatformType PlatformType => PushPlatformType.Android;
         protected override bool IsUserRegisteredToPushService => GcmClient.IsRegistered(Mvx.Resolve<Context>());
 
-        protected override void LaunchRegistrationProcess()
+		protected override Task<ServiceResponse> LaunchRegistrationProcess()
         {
             var androidContext = Mvx.Resolve<Context>();
             GcmClient.CheckDevice(androidContext);
             GcmClient.CheckManifest(androidContext);
             GcmClient.Register(androidContext, _pushSenderId);
+			return Task.FromResult(new ServiceResponse());
         }
 
-        protected override void LaunchUnregistrationProcess()
+        protected override Task<ServiceResponse> LaunchUnregistrationProcess()
         {
             var androidContext = Mvx.Resolve<Context>();
             GcmClient.UnRegister(androidContext);
+			return Task.FromResult(new ServiceResponse());
         }
 
         protected override string ParseRegistrationId(string registrationId)

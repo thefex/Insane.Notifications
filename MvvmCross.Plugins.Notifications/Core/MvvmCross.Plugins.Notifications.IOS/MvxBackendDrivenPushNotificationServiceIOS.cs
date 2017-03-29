@@ -1,8 +1,10 @@
-﻿using Foundation;
+﻿using System.Threading.Tasks;
+using Foundation;
 using MvvmCross.Plugins.Notifications.CachedStorage;
 using MvvmCross.Plugins.Notifications.Data;
 using MvvmCross.Plugins.Notifications.PushNotifications;
 using UIKit;
+using UserNotifications;
 
 namespace MvvmCross.Plugins.Notifications.IOS
 {
@@ -19,8 +21,14 @@ namespace MvvmCross.Plugins.Notifications.IOS
         protected override bool IsUserRegisteredToPushService
             => UIApplication.SharedApplication.IsRegisteredForRemoteNotifications;
 
-        protected override void LaunchRegistrationProcess()
+        protected override async Task<ServiceResponse> LaunchRegistrationProcess()
         {
+            var permissionRequestResponse = await MvxIoSNotificationsSetup.RequestPermissions();
+
+            if (!permissionRequestResponse.IsSuccess)
+                return permissionRequestResponse;
+
+
             if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
             {
                 var pushSettings = UIUserNotificationSettings.GetSettingsForTypes(
@@ -37,11 +45,15 @@ namespace MvvmCross.Plugins.Notifications.IOS
                                         UIRemoteNotificationType.Sound;
                 UIApplication.SharedApplication.RegisterForRemoteNotificationTypes(notificationTypes);
             }
+
+            return new ServiceResponse();
         }
 
-        protected override void LaunchUnregistrationProcess()
+        protected override Task<ServiceResponse> LaunchUnregistrationProcess()
         {
             UIApplication.SharedApplication.UnregisterForRemoteNotifications();
+            NotifyThatUnregistrationSucceed();
+            return Task.FromResult(new ServiceResponse());
         }
 
         protected override string ParseRegistrationId(string registrationId)

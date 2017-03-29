@@ -15,8 +15,8 @@ namespace MvvmCross.Plugins.Notifications.PushNotifications
 
         private readonly Semaphore _synchronizationSemaphore = new Semaphore(1, 1);
 
-        private TaskCompletionSource<string> _registerPushTcs;
-        private TaskCompletionSource<bool> _unregisterPushTcs;
+        private TaskCompletionSource<ServiceResponse<string>> _registerPushTcs;
+        private TaskCompletionSource<ServiceResponse> _unregisterPushTcs;
 
         protected BackendDrivenPushNotificationService(IPersistedStorage persistedStorage,
             IBackendPushRegistrationService backendPushRegistrationService, IPushTagsProvider pushTagsProvider)
@@ -39,10 +39,16 @@ namespace MvvmCross.Plugins.Notifications.PushNotifications
                 if (IsUserRegisteredToPushService)
                     return new ServiceResponse();
 
-                _registerPushTcs = new TaskCompletionSource<string>();
-                LaunchRegistrationProcess();
-                var deviceRegistrationHandle = await _registerPushTcs.Task.ConfigureAwait(false);
-                return await SubscribeToPushNotifications(deviceRegistrationHandle).ConfigureAwait(false);
+                _registerPushTcs = new TaskCompletionSource<ServiceResponse<string>>();
+                var registrationLaunchProcessResponse = await LaunchRegistrationProcess();
+                if (!registrationLaunchProcessResponse.IsSuccess)
+                    return registrationLaunchProcessResponse;
+
+                var deviceRegistrationHandleResponse = await _registerPushTcs.Task.ConfigureAwait(false);
+                if (!deviceRegistrationHandleResponse.IsSuccess)
+                    return deviceRegistrationHandleResponse;
+
+                return await SubscribeToPushNotifications(deviceRegistrationHandleResponse.Result).ConfigureAwait(false);
             }
             finally
             {
@@ -59,8 +65,10 @@ namespace MvvmCross.Plugins.Notifications.PushNotifications
                 if (!IsUserRegisteredToPushService)
                     return ServiceResponse.Build();
 
-                _unregisterPushTcs = new TaskCompletionSource<bool>();
-                LaunchUnregistrationProcess();
+                _unregisterPushTcs = new TaskCompletionSource<ServiceResponse>();
+                var unregistrationLaunchProcessResponse = await LaunchUnregistrationProcess();
+                if (!unregistrationLaunchProcessResponse.IsSuccess)
+                    return unregistrationLaunchProcessResponse;
 
                 await _unregisterPushTcs.Task.ConfigureAwait(false);
                 return await UnsubscribeFromPushNotifications().ConfigureAwait(false);
@@ -72,9 +80,9 @@ namespace MvvmCross.Plugins.Notifications.PushNotifications
             }
         }
 
-        protected abstract void LaunchRegistrationProcess();
+		protected abstract Task<ServiceResponse> LaunchRegistrationProcess();
 
-        protected abstract void LaunchUnregistrationProcess();
+        protected abstract Task<ServiceResponse> LaunchUnregistrationProcess();
 
         protected async Task<ServiceResponse> SubscribeToPushNotifications(string deviceHandle)
         {
@@ -151,14 +159,21 @@ namespace MvvmCross.Plugins.Notifications.PushNotifications
 
         protected abstract string ParseRegistrationId(string registrationId);
 
-        internal void NotifyThatRegistrationSucceed(string result) => _registerPushTcs?.SetResult(result);
+        internal void NotifyThatRegistrationSucceed(string result) => _registerPushTcs?.SetResult(ServiceResponse<string>.Build(result));
 
         internal void NotifyThatRegistrationFailed(Exception withException)
             => _registerPushTcs?.SetException(withException);
 
-        internal void NotifyThatUnregistrationSucceed() => _unregisterPushTcs?.SetResult(true);
+        internal void NotifyThatRegistrationFailed(string errorMsg) => _registerPushTcs?.SetResult(
+            new ServiceResponse<string>().AddErrorMessage(errorMsg));
+
+        internal void NotifyThatUnregistrationSucceed()
+            => _unregisterPushTcs?.SetResult(new ServiceResponse());
 
         internal void NotifyThatUnregistrationFailed(Exception withException)
             => _unregisterPushTcs?.SetException(withException);
+
+        internal void NotifyThatUnregistrationFailed(string errorMsg)
+            => _unregisterPushTcs?.SetResult(new ServiceResponse().AddErrorMessage(errorMsg));
     }
 }

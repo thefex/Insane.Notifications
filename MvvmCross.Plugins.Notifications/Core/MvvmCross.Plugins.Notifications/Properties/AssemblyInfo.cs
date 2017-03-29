@@ -30,5 +30,5 @@ using System.Runtime.CompilerServices;
 
 
 [assembly:InternalsVisibleTo("MvvmCross.Plugins.Notifications.Droid")]
-[assembly: InternalsVisibleTo("MvvmCross.Plugins.Notifications.iOS")]
+[assembly: InternalsVisibleTo("MvvmCross.Plugins.Notifications.IOS")]
 [assembly: InternalsVisibleTo("MvvmCross.Plugins.Notifications.Windows")]
