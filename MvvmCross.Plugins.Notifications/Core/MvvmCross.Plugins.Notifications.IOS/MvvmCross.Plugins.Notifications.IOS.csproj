@@ -34,27 +34,41 @@
     <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\MvvmCross.Platform.4.4.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NotificationsPresenter\" />
+    <Folder Include="Presenter\" />
     <Folder Include="Internal\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Presenter\Specific" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\RemoteNotificationData.cs" />
     <Compile Include="Internal\MvxUNUserNotificationCenterDelegate.cs" />
     <Compile Include="MvxBackendDrivenPushNotificationServiceIOS.cs" />
     <Compile Include="MvxIoSNotificationsSetup.cs" />
+    <Compile Include="Presenter\Handlers\IRemoteNotificationHandler.cs" />
+    <Compile Include="Presenter\Handlers\RemoteNotificationHandler.cs" />
+    <Compile Include="Presenter\IRemoteNotificationIdProvider.cs" />
+    <Compile Include="Presenter\RemoteNotificationHandlerAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NotificationsPresenter\MvxRemoteNotificationsPresenter.cs" />
+    <Compile Include="Presenter\RemoteNotificationsPresenter.cs" />
+    <Compile Include="Extensions\NSDictionaryExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvvmCross.Plugins.Notifications\MvvmCross.Plugins.Notifications.csproj">
       <Project>{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}</Project>
       <Name>MvvmCross.Plugins.Notifications</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

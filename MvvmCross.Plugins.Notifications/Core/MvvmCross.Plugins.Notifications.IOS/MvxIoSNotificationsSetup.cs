@@ -27,7 +27,7 @@ namespace MvvmCross.Plugins.Notifications.IOS
             return response;
         }
 
-        public static void Initialize(UIApplicationDelegate applicationDelegate)
+        public static void Initialize()
         {
             UNUserNotificationCenter.Current.Delegate = new MvxUNUserNotificationCenterDelegate();
         }
