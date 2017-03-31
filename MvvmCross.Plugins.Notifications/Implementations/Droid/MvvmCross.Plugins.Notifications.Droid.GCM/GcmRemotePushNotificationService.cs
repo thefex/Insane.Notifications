@@ -8,14 +8,14 @@ using MvvmCross.Plugins.Notifications.PushNotifications;
 
 namespace MvvmCross.Plugins.Notifications.Droid.GCM
 {
-    public class GcmBackendDrivenPushNotificationService : BackendDrivenPushNotificationService
+    public class GcmRemotePushNotificationService : RemotePushNotificationService
     {
         private readonly string _pushSenderId;
 
-        public GcmBackendDrivenPushNotificationService(IPersistedStorage persistedStorage,
-            IBackendPushRegistrationService backendPushRegistrationService, IPushTagsProvider pushTagsProvider,
+        public GcmRemotePushNotificationService(IPersistedStorage persistedStorage,
+            IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider,
             string pushSenderId)
-            : base(persistedStorage, backendPushRegistrationService, pushTagsProvider)
+            : base(persistedStorage, remotePushRegistrationService, pushTagsProvider)
         {
             _pushSenderId = pushSenderId;
         }

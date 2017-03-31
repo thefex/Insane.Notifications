@@ -27,6 +27,8 @@ namespace MvvmCross.Plugins.Notifications.IOS.Internal
 	    public override void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)
 	    {
 	        base.WillPresentNotification(center, notification, completionHandler);
+
+
 	    }
 	}
 }

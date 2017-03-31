@@ -6,10 +6,10 @@ using MvvmCross.Plugins.Notifications.Data;
 
 namespace MvvmCross.Plugins.Notifications.PushNotifications
 {
-    public abstract class BackendDrivenPushNotificationService : INotificationsService
+    public abstract class RemotePushNotificationService : INotificationsService
     {
         private const string StoragePushDeviceRegistrationIdKey = "PushNotificationsServiceDeviceIdKey";
-        private readonly IBackendPushRegistrationService _backendPushRegistrationService;
+        private readonly IRemotePushRegistrationService _remotePushRegistrationService;
         private readonly IPersistedStorage _persistedStorage;
         private readonly IPushTagsProvider _pushTagsProvider;
 
@@ -18,11 +18,11 @@ namespace MvvmCross.Plugins.Notifications.PushNotifications
         private TaskCompletionSource<ServiceResponse<string>> _registerPushTcs;
         private TaskCompletionSource<ServiceResponse> _unregisterPushTcs;
 
-        protected BackendDrivenPushNotificationService(IPersistedStorage persistedStorage,
-            IBackendPushRegistrationService backendPushRegistrationService, IPushTagsProvider pushTagsProvider)
+        protected RemotePushNotificationService(IPersistedStorage persistedStorage,
+            IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider)
         {
             _persistedStorage = persistedStorage;
-            _backendPushRegistrationService = backendPushRegistrationService;
+            _remotePushRegistrationService = remotePushRegistrationService;
             _pushTagsProvider = pushTagsProvider;
         }
 
@@ -120,7 +120,7 @@ namespace MvvmCross.Plugins.Notifications.PushNotifications
 
             var deviceRegistrationId =
                 ParseRegistrationId(_persistedStorage.Get<string>(StoragePushDeviceRegistrationIdKey));
-            return _backendPushRegistrationService.UnsubscribeFromPush(deviceRegistrationId);
+            return _remotePushRegistrationService.UnsubscribeFromPush(deviceRegistrationId);
         }
 
         private async Task<ServiceResponse<string>> GetDeviceRegistrationId(string deviceHandle,
@@ -131,7 +131,7 @@ namespace MvvmCross.Plugins.Notifications.PushNotifications
             if (!hasDeviceRegistrationId || forceReplaceCacheValue)
             {
                 var deviceRegistrationIdResponse =
-                    await _backendPushRegistrationService.RegisterDevice(deviceHandle).ConfigureAwait(false);
+                    await _remotePushRegistrationService.RegisterDevice(deviceHandle).ConfigureAwait(false);
 
                 if (!deviceRegistrationIdResponse.IsSuccess)
                     return deviceRegistrationIdResponse;
@@ -154,7 +154,7 @@ namespace MvvmCross.Plugins.Notifications.PushNotifications
                 TagsToRegisterIn = _pushTagsProvider.ActivePushTags
             };
 
-            return _backendPushRegistrationService.UpdateDeviceRegistration(subscribeToPushRequest);
+            return _remotePushRegistrationService.UpdateDeviceRegistration(subscribeToPushRequest);
         }
 
         protected abstract string ParseRegistrationId(string registrationId);

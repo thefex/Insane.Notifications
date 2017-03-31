@@ -8,11 +8,11 @@ using UserNotifications;
 
 namespace MvvmCross.Plugins.Notifications.IOS
 {
-    public class MvxBackendDrivenPushNotificationServiceIOS : BackendDrivenPushNotificationService
+    public class MvxRemotePushNotificationServiceIos : RemotePushNotificationService
     {
-        public MvxBackendDrivenPushNotificationServiceIOS(IPersistedStorage persistedStorage,
-            IBackendPushRegistrationService backendPushRegistrationService, IPushTagsProvider pushTagsProvider)
-            : base(persistedStorage, backendPushRegistrationService, pushTagsProvider)
+        public MvxRemotePushNotificationServiceIos(IPersistedStorage persistedStorage,
+            IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider)
+            : base(persistedStorage, remotePushRegistrationService, pushTagsProvider)
         {
         }
 

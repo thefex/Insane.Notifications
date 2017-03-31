@@ -65,7 +65,7 @@ namespace MvvmCross.Plugins.Notifications.IOS.NotificationsPresenter
 	        bool isNotificationHandled = false;
 
 	        if (_remoteNotificationHandlers.ContainsKey(notificationId))
-	            isNotificationHandled = _remoteNotificationHandlers[notificationId].Handle(notificationJson, notificationId∂);
+	            isNotificationHandled = _remoteNotificationHandlers[notificationId].Handle(notificationJson, notificationId);
 
 	        if (!isNotificationHandled)
                 OnNotificationPublished(new RemoteNotificationData(notificationId, notificationJson));

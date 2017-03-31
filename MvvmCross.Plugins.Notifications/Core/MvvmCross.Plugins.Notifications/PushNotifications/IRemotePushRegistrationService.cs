@@ -3,7 +3,7 @@ using MvvmCross.Plugins.Notifications.Data;
 
 namespace MvvmCross.Plugins.Notifications.PushNotifications
 {
-    public interface IBackendPushRegistrationService
+    public interface IRemotePushRegistrationService
     {
         Task<ServiceResponse> UnsubscribeFromPush(string registrationId);
 

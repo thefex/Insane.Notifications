@@ -43,12 +43,12 @@ namespace MvvmCross.Plugins.Notifications.Droid.GCM
       //      notificationsService.NotifyThatUnregistrationFailed(new InvalidOperationException(errorId));
         }
 
-        protected GcmBackendDrivenPushNotificationService GetNotificationsService()
+        protected GcmRemotePushNotificationService GetNotificationsService()
         {
-            var notificationsService = Mvx.Resolve<INotificationsService>() as GcmBackendDrivenPushNotificationService;
+            var notificationsService = Mvx.Resolve<INotificationsService>() as GcmRemotePushNotificationService;
             if (notificationsService == null)
                 throw new InvalidOperationException(
-                    $"{nameof(GcmBackendDrivenPushNotificationService)} is not registered for type: {nameof(INotificationsService)}");
+                    $"{nameof(GcmRemotePushNotificationService)} is not registered for type: {nameof(INotificationsService)}");
             return notificationsService;
         }
     }

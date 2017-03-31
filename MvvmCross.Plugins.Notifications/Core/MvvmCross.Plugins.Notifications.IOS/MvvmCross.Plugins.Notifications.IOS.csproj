@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="Data\RemoteNotificationData.cs" />
     <Compile Include="Internal\MvxUNUserNotificationCenterDelegate.cs" />
-    <Compile Include="MvxBackendDrivenPushNotificationServiceIOS.cs" />
+    <Compile Include="MvxRemotePushNotificationServiceIos.cs" />
     <Compile Include="MvxIoSNotificationsSetup.cs" />
     <Compile Include="Presenter\Handlers\IRemoteNotificationHandler.cs" />
     <Compile Include="Presenter\Handlers\RemoteNotificationHandler.cs" />

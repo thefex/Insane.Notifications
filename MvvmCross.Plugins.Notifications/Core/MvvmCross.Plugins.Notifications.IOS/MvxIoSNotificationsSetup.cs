@@ -34,15 +34,15 @@ namespace MvvmCross.Plugins.Notifications.IOS
 
 		public static void OnRegisterToPushSuccess(NSData deviceTokenData)
 		{
-		    BackendDrivenPushNotificationService.NotifyThatRegistrationSucceed(deviceTokenData.Description);
+		    RemotePushNotificationService.NotifyThatRegistrationSucceed(deviceTokenData.Description);
 		}
 
 		public static void OnRegisterToPushFailure(NSError failureError)
 		{
-		    BackendDrivenPushNotificationService.NotifyThatRegistrationFailed(failureError.LocalizedFailureReason);
+		    RemotePushNotificationService.NotifyThatRegistrationFailed(failureError.LocalizedFailureReason);
 		}
 
-        private static BackendDrivenPushNotificationService BackendDrivenPushNotificationService
-            => Mvx.Resolve<BackendDrivenPushNotificationService>();
+        private static RemotePushNotificationService RemotePushNotificationService
+            => Mvx.Resolve<RemotePushNotificationService>();
     }
 }
