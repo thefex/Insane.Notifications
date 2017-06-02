@@ -1,2 +1,2 @@
-# MvvmCross.Plugins.Notifications
-MvvmCross plugin to handle notifications (local and PUSH)
+# Insane Notifications
+Xamarin plugin to handle notifications with ease.
