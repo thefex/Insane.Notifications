@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="3.2">
+    <title>Insane.Notifications.Droid</title>
+    <id>Insane.Notifications.Droid</id>
+    <version>1.0.0-prerelease1</version>
+    <authors>InsaneLab.com, Przemysław Raciborski [thefex] with help of Erlend Angelsen [erlend]</authors>
+    <description>Xamarin library for creating and handling Notifications and things related to PUSH.</description>
+    <dependencies>
+      <group targetFramework="uap">
+   <dependency id="Insane.Notifications" version="1.0.0-prerelease1"/>
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\Core\InsaneNotifications.UWP\bin\Release\Insane.Notifications.Droid.GCM.dll" target="lib\uap" />
+  </files>
+</package>

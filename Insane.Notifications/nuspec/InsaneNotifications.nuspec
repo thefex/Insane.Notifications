@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata minClientVersion="3.2">
+        <title>Insane.Notifications</title>
+        <id>Insane.Notifications</id>
+        <version>1.0.0-prerelease1</version>
+        <authors>InsaneLab.com, Przemysław Raciborski [thefex] with help of Erlend Angelsen [erlend]</authors>
+        <description>Xamarin library for creating and handling Notifications and things related to PUSH.</description>
+        <dependencies>
+          <group targetFramework="net45">
+            <dependency id="Newtonsoft.Json" version="10.2"/>
+          </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\Core\InsaneNotifications\bin\Release\Insane.Notifications.dll" target="lib\portable-net45+win8+wp8+wpa81" />
+    </files>
+</package>
