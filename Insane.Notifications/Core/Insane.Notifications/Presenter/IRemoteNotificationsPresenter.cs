@@ -1,7 +1,7 @@
 using System;
-using MvvmCross.Plugins.Notifications.Data;
+using Insane.Notifications.Data;
 
-namespace MvvmCross.Plugins.Notifications.Presenter
+namespace Insane.Notifications.Presenter
 {
     public interface IRemoteNotificationsPresenter
     {

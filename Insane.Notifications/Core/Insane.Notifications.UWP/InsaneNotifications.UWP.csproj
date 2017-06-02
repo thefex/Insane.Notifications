@@ -7,8 +7,8 @@
     <ProjectGuid>{D6481DF7-4944-4C34-9C17-03A8BBCF8491}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InsaneNotifications.UWP</RootNamespace>
-    <AssemblyName>InsaneNotifications.UWP</AssemblyName>
+    <RootNamespace>Insane.Notifications.UWP</RootNamespace>
+    <AssemblyName>Insane.Notifications.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
@@ -129,7 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>5.2.3</Version>
+      <Version>5.3.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
       <Version>1.4.1</Version>

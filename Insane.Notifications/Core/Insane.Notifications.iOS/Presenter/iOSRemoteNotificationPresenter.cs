@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
-using MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers;
-using MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers.Alert;
-using MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers.Badge;
-using MvvmCross.Plugins.Notifications.Presenter;
-using UserNotifications;
-using Foundation;
-using MvvmCross.Plugins.Notifications.IOS.Extensions;
-using MvvmCross.Plugins.Notifications.IOS.Internal;
 using System.Linq;
-using MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers.Sound;
+using System.Reflection;
+using Insane.Notifications.iOS.Extensions;
+using Insane.Notifications.iOS.Internal;
+using Insane.Notifications.iOS.Presenter.Handlers;
+using Insane.Notifications.iOS.Presenter.Handlers.Alert;
+using Insane.Notifications.iOS.Presenter.Handlers.Badge;
+using Insane.Notifications.iOS.Presenter.Handlers.Sound;
+using Insane.Notifications.Presenter;
+using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Presenter
+namespace Insane.Notifications.iOS.Presenter
 {
     public class iOSRemoteNotificationPresenter : RemoteNotificationsPresenter, IIOSRemoteNotificationsPresenter
     {

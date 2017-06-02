@@ -1,6 +1,6 @@
 using System;
 
-namespace InsaneNotifications.UWP.Handlers.Tile
+namespace Insane.Notifications.UWP.Handlers.Tile
 {
     public class TileRemoteNotificationHandlerAttribute : Attribute
     {

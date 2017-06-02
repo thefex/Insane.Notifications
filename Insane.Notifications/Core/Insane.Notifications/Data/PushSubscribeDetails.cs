@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MvvmCross.Plugins.Notifications.Data
+namespace Insane.Notifications.Data
 {
     public class PushSubscribeDetails
     {

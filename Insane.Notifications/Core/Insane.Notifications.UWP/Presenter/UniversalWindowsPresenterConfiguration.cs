@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using InsaneNotifications.UWP.Handlers.Badge;
-using InsaneNotifications.UWP.Handlers.Tile;
-using InsaneNotifications.UWP.Handlers.Toast;
+﻿using Insane.Notifications.UWP.Handlers.Badge;
+using Insane.Notifications.UWP.Handlers.Tile;
+using Insane.Notifications.UWP.Handlers.Toast;
 
-namespace InsaneNotifications.UWP.Presenter
+namespace Insane.Notifications.UWP.Presenter
 {
     public class UniversalWindowsPresenterConfiguration
     {

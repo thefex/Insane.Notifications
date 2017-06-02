@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvvmCross.Plugins.Notifications.Exceptions
+namespace Insane.Notifications.Exceptions
 {
     public class PushDeregistrationFailedException : InvalidOperationException
     {

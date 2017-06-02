@@ -1,8 +1,8 @@
 using Android.App;
 using Android.Content;
 using Android.Support.V4.App;
-using MvvmCross.Plugins.Notifications.Data;
-using MvvmCross.Plugins.Notifications.Presenter.Handlers;
+using Insane.Notifications.Data;
+using Insane.Notifications.Presenter.Handlers;
 using Newtonsoft.Json;
 
 namespace MvvmCross.Plugins.Notifications.Droid.NotificationsBuilder

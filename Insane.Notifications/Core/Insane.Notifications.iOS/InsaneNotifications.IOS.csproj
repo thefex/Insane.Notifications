@@ -8,9 +8,9 @@
     <ProjectGuid>{7C34C763-0F64-449B-8A78-14D0A4917D49}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>MvvmCross.Plugins.Notifications.IOS</RootNamespace>
+    <RootNamespace>Insane.Notifications.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>MvvmCross.Plugins.Notifications.IOS</AssemblyName>
+    <AssemblyName>Insane.Notifications.iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,38 +31,41 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Binding.4.4.0\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.iOS, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Binding.4.4.0\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Core.4.4.0\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.iOS, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Core.4.4.0\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Binding.4.4.0\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Platform.4.4.0\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Platform.4.4.0\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\..\..\packages\MvvmCross.Platform.4.4.0\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.iOS">
-      <HintPath>..\..\..\packages\MvvmCross.Platform.4.4.0\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\..\..\packages\MvvmCross.Core.4.4.0\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.iOS">
-      <HintPath>..\..\..\packages\MvvmCross.Core.4.4.0\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\..\..\packages\MvvmCross.Binding.4.4.0\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding.iOS">
-      <HintPath>..\..\..\packages\MvvmCross.Binding.4.4.0\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\..\..\packages\MvvmCross.Binding.4.4.0\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
-    </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Internal\MvxUNUserNotificationCenterDelegate.cs" />
     <Compile Include="MvxRemotePushNotificationServiceIos.cs" />
@@ -78,9 +81,6 @@
     <Compile Include="Internal\NotificationTappedHandler.cs" />
     <Compile Include="Presenter\Handlers\IIOSRemoteNotificationTapAction.cs" />
     <Compile Include="Presenter\Handlers\iOSRemoteNotificationTapAction.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Insane.Notifications\InsaneNotifications.csproj">

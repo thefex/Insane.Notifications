@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Foundation;
+using Insane.Notifications.Data;
+using Insane.Notifications.iOS.Internal;
+using Insane.Notifications.iOS.Presenter;
+using Insane.Notifications.PushNotifications;
 using MvvmCross.Platform;
-using MvvmCross.Plugins.Notifications.Data;
-using MvvmCross.Plugins.Notifications.IOS.Internal;
-using MvvmCross.Plugins.Notifications.IOS.Presenter;
-using MvvmCross.Plugins.Notifications.PushNotifications;
-using UIKit;
 using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS
+namespace Insane.Notifications.iOS
 {
     public class MvxIoSNotificationsSetup
     {

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Windows.Networking.PushNotifications;
-using InsaneNotifications.UWP.Presenter;
-using MvvmCross.Plugins.Notifications.CachedStorage;
-using MvvmCross.Plugins.Notifications.Data;
-using MvvmCross.Plugins.Notifications.Presenter;
-using MvvmCross.Plugins.Notifications.PushNotifications;
+using Insane.Notifications.CachedStorage;
+using Insane.Notifications.Data;
+using Insane.Notifications.PushNotifications;
+using Insane.Notifications.UWP.Presenter;
 
-namespace InsaneNotifications.UWP
+namespace Insane.Notifications.UWP
 {
     internal class UniversalWindowsRemotePushNotificationService : RemotePushNotificationService
     {

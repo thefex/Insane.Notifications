@@ -1,13 +1,13 @@
 ﻿using System;
-using MvvmCross.Plugins.Notifications.Presenter;
-using UserNotifications;
-using MvvmCross.Plugins.Notifications.IOS.Extensions;
 using System.Collections.Generic;
-using MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers;
-using System.Reflection;
 using System.Linq;
+using System.Reflection;
+using Insane.Notifications.iOS.Extensions;
+using Insane.Notifications.iOS.Presenter.Handlers;
+using Insane.Notifications.Presenter;
+using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Internal
+namespace Insane.Notifications.iOS.Internal
 {
     internal class NotificationTappedHandler
     {

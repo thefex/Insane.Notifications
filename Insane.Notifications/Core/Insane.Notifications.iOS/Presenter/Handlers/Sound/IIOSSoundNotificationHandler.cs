@@ -1,6 +1,6 @@
 ﻿using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers.Sound
+namespace Insane.Notifications.iOS.Presenter.Handlers.Sound
 {
     public interface IIOSSoundNotificationHandler
     {

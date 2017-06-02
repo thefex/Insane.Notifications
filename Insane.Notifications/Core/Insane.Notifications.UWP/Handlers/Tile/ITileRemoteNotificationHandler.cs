@@ -1,6 +1,6 @@
 ﻿using Windows.UI.Notifications;
 
-namespace InsaneNotifications.UWP.Handlers.Tile
+namespace Insane.Notifications.UWP.Handlers.Tile
 {
     public interface ITileRemoteNotificationHandler
     {

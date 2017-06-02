@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using MvvmCross.Plugins.Notifications.CachedStorage;
-using MvvmCross.Plugins.Notifications.Data;
+using Insane.Notifications.CachedStorage;
+using Insane.Notifications.Data;
 
-namespace MvvmCross.Plugins.Notifications.PushNotifications
+namespace Insane.Notifications.PushNotifications
 {
     public abstract class RemotePushNotificationService : INotificationsService
     {

@@ -29,8 +29,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 
-[assembly: InternalsVisibleTo("MvvmCross.Plugins.Notifications.Droid")]
-[assembly: InternalsVisibleTo("MvvmCross.Plugins.Notifications.IOS")]
-[assembly: InternalsVisibleTo("MvvmCross.Plugins.Notifications.Windows")]
-[assembly: InternalsVisibleTo("MvvmCross.Plugins.Notifications.Droid.GCM")]
-[assembly: InternalsVisibleTo("InsaneNotifications.UWP")]
+[assembly: InternalsVisibleTo("Insane.Notifications.Droid")]
+[assembly: InternalsVisibleTo("Insane.Notifications.IOS")]
+[assembly: InternalsVisibleTo("Insane.Notifications.UWP")]
+[assembly: InternalsVisibleTo("Insane.Notifications.Droid.GCM")]
+[assembly: InternalsVisibleTo("Insane.Notifications.Droid.Local")]

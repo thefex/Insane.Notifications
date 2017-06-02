@@ -1,4 +1,4 @@
-﻿namespace MvvmCross.Plugins.Notifications.Presenter.Handlers
+﻿namespace Insane.Notifications.Presenter.Handlers
 {
     public interface IRemoteNotificationTapAction
     {

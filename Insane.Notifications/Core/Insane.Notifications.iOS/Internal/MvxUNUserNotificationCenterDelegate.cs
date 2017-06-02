@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using Foundation;
-using MvvmCross.Plugins.Notifications.IOS.Presenter;
+using Insane.Notifications.iOS.Presenter;
 using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Internal
+namespace Insane.Notifications.iOS.Internal
 {
 	public class MvxUNUserNotificationCenterDelegate : UNUserNotificationCenterDelegate
 	{

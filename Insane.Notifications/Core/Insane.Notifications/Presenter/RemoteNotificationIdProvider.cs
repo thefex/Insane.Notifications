@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MvvmCross.Plugins.Notifications.Presenter
+namespace Insane.Notifications.Presenter
 {
     public abstract class RemoteNotificationIdProvider<TData> : IRemoteNotificationIdProvider where TData : class
     {

@@ -1,12 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Foundation;
-using MvvmCross.Plugins.Notifications.CachedStorage;
-using MvvmCross.Plugins.Notifications.Data;
-using MvvmCross.Plugins.Notifications.PushNotifications;
+using Insane.Notifications.CachedStorage;
+using Insane.Notifications.Data;
+using Insane.Notifications.PushNotifications;
 using UIKit;
-using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS
+namespace Insane.Notifications.iOS
 {
     public class MvxRemotePushNotificationServiceIos : RemotePushNotificationService
     {

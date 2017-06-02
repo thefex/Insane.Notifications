@@ -1,6 +1,6 @@
 using System;
 
-namespace InsaneNotifications.UWP.Handlers.Toast
+namespace Insane.Notifications.UWP.Handlers.Toast
 {
     public class ToastRemoteNotificationHandlerAttribute : Attribute
     {

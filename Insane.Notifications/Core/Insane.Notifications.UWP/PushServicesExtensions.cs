@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
-using Windows.ApplicationModel.Background;
 using Windows.Networking.PushNotifications;
 using Windows.Storage;
-using InsaneNotifications.UWP.Internal;
-using InsaneNotifications.UWP.Presenter;
-using MvvmCross.Plugins.Notifications;
-using MvvmCross.Plugins.Notifications.Presenter;
+using Insane.Notifications.Presenter;
+using Insane.Notifications.UWP.Internal;
+using Insane.Notifications.UWP.Presenter;
 using Polly;
 
-namespace InsaneNotifications.UWP
+namespace Insane.Notifications.UWP
 {
     public static class PushServicesExtensions
     {

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using InsaneNotifications.UWP.Internal;
-using InsaneNotifications.UWP.Presenter;
-using MvvmCross.Plugins.Notifications;
-using MvvmCross.Plugins.Notifications.CachedStorage;
-using MvvmCross.Plugins.Notifications.Data;
-using MvvmCross.Plugins.Notifications.PushNotifications;
+﻿using System.Threading.Tasks;
+using Insane.Notifications.CachedStorage;
+using Insane.Notifications.Data;
+using Insane.Notifications.PushNotifications;
+using Insane.Notifications.UWP.Internal;
+using Insane.Notifications.UWP.Presenter;
 
-namespace InsaneNotifications.UWP
+namespace Insane.Notifications.UWP
 {
     public class UWPRemotePushNotificationsService : INotificationsService
     {

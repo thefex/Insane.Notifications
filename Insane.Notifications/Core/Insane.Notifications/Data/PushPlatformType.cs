@@ -1,4 +1,4 @@
-﻿namespace MvvmCross.Plugins.Notifications.Data
+﻿namespace Insane.Notifications.Data
 {
     public enum PushPlatformType
     {

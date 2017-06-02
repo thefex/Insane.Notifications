@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Extensions
+namespace Insane.Notifications.iOS.Extensions
 {
 	public static class NSDictionaryExtensions
 	{

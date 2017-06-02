@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.Networking.PushNotifications;
 using Windows.UI.Notifications;
-using InsaneNotifications.UWP.Handlers.Badge;
-using InsaneNotifications.UWP.Handlers.Tile;
-using InsaneNotifications.UWP.Handlers.Toast;
-using MvvmCross.Plugins.Notifications.Data;
-using MvvmCross.Plugins.Notifications.Presenter;
-using MvvmCross.Plugins.Notifications.Presenter.Handlers;
+using Insane.Notifications.Presenter;
+using Insane.Notifications.Presenter.Handlers;
+using Insane.Notifications.UWP.Handlers.Badge;
+using Insane.Notifications.UWP.Handlers.Tile;
+using Insane.Notifications.UWP.Handlers.Toast;
 
-namespace InsaneNotifications.UWP.Presenter
+namespace Insane.Notifications.UWP.Presenter
 {
     public class UniversalWindowsRemoteNotificationsPresenter : RemoteNotificationsPresenter, IUniversalWindowsRemoteNotificationsPresenter
     {

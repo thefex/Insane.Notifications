@@ -1,7 +1,7 @@
 ﻿using System;
 using Android.Content;
+using Insane.Notifications.Presenter.Handlers;
 using MvvmCross.Plugins.Notifications.Droid.NotificationsBuilder;
-using MvvmCross.Plugins.Notifications.Presenter.Handlers;
 using MvvmCross.Plugins.Notifications.Droid.Extensions;
 
 namespace MvvmCross.Plugins.Notifications.Droid.Presenter

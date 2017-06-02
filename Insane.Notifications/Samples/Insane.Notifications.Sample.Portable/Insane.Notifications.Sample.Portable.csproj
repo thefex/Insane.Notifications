@@ -37,14 +37,14 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Insane.Notifications\InsaneNotifications.csproj">
       <Project>{b3f139bd-b111-4c2a-ab5c-4ea65f23365f}</Project>
-      <Name>MvvmCross.Plugins.Notifications</Name>
+      <Name>InsaneNotifications</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MvvmCross.Core.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MvvmCross.Platform.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
     </Reference>
   </ItemGroup>
