@@ -1,7 +1,6 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Data
+namespace Insane.Notifications.iOS.Data
 {
     public class APNSPushData<T>
     {

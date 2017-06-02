@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MvvmCross.Plugins.Notifications.Data
+namespace Insane.Notifications.Data
 {
     public class ServiceResponse
     {

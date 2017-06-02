@@ -2,6 +2,7 @@
 using Android.App;
 using Android.OS;
 using Android.Runtime;
+using Insane.Notifications;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Notifications.Sample.Portable.ViewModels;

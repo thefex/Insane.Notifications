@@ -1,4 +1,4 @@
-﻿namespace MvvmCross.Plugins.Notifications.CachedStorage
+﻿namespace Insane.Notifications.CachedStorage
 {
     public interface IPersistedStorage
     {

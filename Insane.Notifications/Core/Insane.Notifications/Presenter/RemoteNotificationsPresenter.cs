@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using MvvmCross.Plugins.Notifications.Data;
-using MvvmCross.Plugins.Notifications.Presenter.Handlers;
+using Insane.Notifications.Data;
+using Insane.Notifications.Presenter.Handlers;
 
-namespace MvvmCross.Plugins.Notifications.Presenter
+namespace Insane.Notifications.Presenter
 {
     public class RemoteNotificationsPresenter : IRemoteNotificationsPresenter
     {

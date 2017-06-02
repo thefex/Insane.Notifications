@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MvvmCross.Plugins.Notifications.Presenter
+﻿namespace Insane.Notifications.Presenter
 {
     public interface IRemoteNotificationIdProvider
     {

@@ -1,6 +1,6 @@
 ﻿using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers.Alert
+namespace Insane.Notifications.iOS.Presenter.Handlers.Alert
 {
     public interface IIOSAlertNotificationHandler
     {

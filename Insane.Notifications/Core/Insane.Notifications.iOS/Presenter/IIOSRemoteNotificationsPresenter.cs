@@ -1,7 +1,7 @@
-﻿using MvvmCross.Plugins.Notifications.Presenter;
+﻿using Insane.Notifications.Presenter;
 using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Presenter
+namespace Insane.Notifications.iOS.Presenter
 {
     public interface IIOSRemoteNotificationsPresenter : IRemoteNotificationsPresenter
     {

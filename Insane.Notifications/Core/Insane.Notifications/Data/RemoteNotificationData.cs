@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MvvmCross.Plugins.Notifications.Data
+namespace Insane.Notifications.Data
 {
     public class RemoteNotificationData
     {

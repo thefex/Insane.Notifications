@@ -1,7 +1,7 @@
-﻿using UserNotifications;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers
+namespace Insane.Notifications.iOS.Presenter.Handlers
 {
     public abstract class iOSRemoteNotificationTapAction<TNotificationData> : iOSRemoteNotificationTapAction
         where TNotificationData : class

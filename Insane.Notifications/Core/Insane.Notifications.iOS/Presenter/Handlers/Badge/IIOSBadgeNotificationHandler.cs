@@ -1,6 +1,6 @@
 ﻿using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers.Badge
+namespace Insane.Notifications.iOS.Presenter.Handlers.Badge
 {
     public interface IIOSBadgeNotificationHandler
     {

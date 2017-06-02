@@ -1,10 +1,9 @@
 ﻿using System;
 using Windows.Networking.PushNotifications;
 using Windows.UI.Notifications;
-using MvvmCross.Plugins.Notifications.Data;
-using MvvmCross.Plugins.Notifications.Presenter;
+using Insane.Notifications.Presenter;
 
-namespace InsaneNotifications.UWP.Presenter
+namespace Insane.Notifications.UWP.Presenter
 {
     public interface IUniversalWindowsRemoteNotificationsPresenter : IRemoteNotificationsPresenter
     {

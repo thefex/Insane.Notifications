@@ -1,10 +1,9 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
-using MvvmCross.Plugins.Notifications;
-using MvvmCross.Plugins.Notifications.Data;
+using Insane.Notifications.Data;
 
-namespace InsaneNotifications.UWP.Internal
+namespace Insane.Notifications.UWP.Internal
 {
     internal class PushInvalidateRegistrationAppUpdateBackgroundTaskNotificationsServiceDecorator : INotificationsService
     {

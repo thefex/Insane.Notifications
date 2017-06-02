@@ -1,4 +1,6 @@
-﻿namespace MvvmCross.Plugins.Notifications.Presenter.Handlers
+﻿using Newtonsoft.Json;
+
+namespace Insane.Notifications.Presenter.Handlers
 {
     public abstract class RemoteNotificationTapAction<TNotificationData> : IRemoteNotificationTapAction
         where TNotificationData : class

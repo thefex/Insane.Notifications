@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using MvvmCross.Plugins.Notifications.Data;
+using Insane.Notifications.Data;
 
-namespace MvvmCross.Plugins.Notifications.PushNotifications
+namespace Insane.Notifications.PushNotifications
 {
     public interface IRemotePushRegistrationService
     {

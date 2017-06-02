@@ -1,9 +1,9 @@
 ﻿using System;
 using Foundation;
+using Insane.Notifications.iOS;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
-using MvvmCross.Plugins.Notifications.IOS;
 using UIKit;
 
 namespace MvvmCross.Plugins.Notifications.Samples.iOS
