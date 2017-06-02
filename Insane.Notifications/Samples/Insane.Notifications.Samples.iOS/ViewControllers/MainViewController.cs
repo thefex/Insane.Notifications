@@ -1,9 +1,7 @@
 ﻿using System;
-using MvvmCross.iOS.Views;
 using MvvmCross.Plugins.Notifications.Sample.Portable.ViewModels;
-using UIKit;
 
-namespace MvvmCross.Plugins.Notifications.Samples.iOS
+namespace MvvmCross.Plugins.Notifications.Samples.iOS.ViewControllers
 {
 	public partial class MainViewController : MvxViewController<MainViewModel>
 	{

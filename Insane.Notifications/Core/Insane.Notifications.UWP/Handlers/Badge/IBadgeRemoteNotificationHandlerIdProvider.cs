@@ -1,6 +1,6 @@
 ﻿using Windows.UI.Notifications;
 
-namespace InsaneNotifications.UWP.Handlers
+namespace InsaneNotifications.UWP.Handlers.Badge
 {
     public interface IBadgeRemoteNotificationHandlerIdProvider
     {

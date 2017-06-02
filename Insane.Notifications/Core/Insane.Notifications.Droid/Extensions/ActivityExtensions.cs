@@ -1,9 +1,9 @@
 ﻿using System;
 using Android.OS;
-using InsaneNotifications.UWP.Handlers;
 using MvvmCross.Plugins.Notifications.Data;
 using MvvmCross.Plugins.Notifications.Droid.NotificationsBuilder;
 using MvvmCross.Plugins.Notifications.Droid.Presenter;
+using MvvmCross.Plugins.Notifications.Presenter.Handlers;
 using Newtonsoft.Json;
 
 namespace MvvmCross.Plugins.Notifications.Droid.Extensions

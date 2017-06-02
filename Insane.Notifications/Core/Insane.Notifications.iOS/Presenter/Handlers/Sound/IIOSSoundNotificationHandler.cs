@@ -1,7 +1,6 @@
-﻿using System;
-using UserNotifications;
+﻿using UserNotifications;
 
-namespace MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers
+namespace MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers.Sound
 {
     public interface IIOSSoundNotificationHandler
     {

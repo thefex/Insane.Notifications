@@ -49,7 +49,7 @@
     <Compile Include="Presenter\IRemoteNotificationIdProvider.cs" />
     <Compile Include="Presenter\IRemoteNotificationsPresenter.cs" />
     <Compile Include="Presenter\RemoteNotificationHandlerAttribute.cs" />
-    <Compile Include="Presenter\RemoteNotificationPresenter.cs" />
+    <Compile Include="Presenter\RemoteNotificationsPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PushNotifications\RemotePushNotificationService.cs" />
     <Compile Include="PushNotifications\IRemotePushRegistrationService.cs" />

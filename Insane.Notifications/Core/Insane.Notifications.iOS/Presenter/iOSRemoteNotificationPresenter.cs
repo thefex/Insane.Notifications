@@ -10,6 +10,7 @@ using Foundation;
 using MvvmCross.Plugins.Notifications.IOS.Extensions;
 using MvvmCross.Plugins.Notifications.IOS.Internal;
 using System.Linq;
+using MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers.Sound;
 
 namespace MvvmCross.Plugins.Notifications.IOS.Presenter
 {

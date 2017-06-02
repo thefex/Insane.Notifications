@@ -1,6 +1,6 @@
 ﻿using System;
-using InsaneNotifications.UWP.Handlers;
 using MvvmCross.Plugins.Notifications.IOS.Internal;
+using MvvmCross.Plugins.Notifications.Presenter.Handlers;
 using UserNotifications;
 
 namespace MvvmCross.Plugins.Notifications.IOS.Presenter.Handlers

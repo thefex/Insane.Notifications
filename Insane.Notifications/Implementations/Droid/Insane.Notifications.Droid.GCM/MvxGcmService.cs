@@ -1,8 +1,8 @@
 using System;
 using Android.Content;
-using Gcm.Client;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Platform;
+using MvvmCross.Plugins.Notifications.Droid.GCM.GcmClient;
 using MvvmCross.Plugins.Notifications.Presenter;
 using MvvmCross.Plugins.Notifications.PushNotifications;
 

@@ -142,7 +142,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmCross.Plugins.Notifications\Core\MvvmCross.Plugins.Notifications\InsaneNotifications.csproj">
+    <ProjectReference Include="..\Insane.Notifications\InsaneNotifications.csproj">
       <Project>{b3f139bd-b111-4c2a-ab5c-4ea65f23365f}</Project>
       <Name>InsaneNotifications</Name>
     </ProjectReference>

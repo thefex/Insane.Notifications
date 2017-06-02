@@ -35,7 +35,7 @@
     <Compile Include="MvxApp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\MvvmCross.Plugins.Notifications\MvvmCross.Plugins.Notifications.csproj">
+    <ProjectReference Include="..\..\Core\Insane.Notifications\InsaneNotifications.csproj">
       <Project>{b3f139bd-b111-4c2a-ab5c-4ea65f23365f}</Project>
       <Name>MvvmCross.Plugins.Notifications</Name>
     </ProjectReference>

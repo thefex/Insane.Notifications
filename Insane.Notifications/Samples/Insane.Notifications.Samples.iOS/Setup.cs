@@ -1,11 +1,7 @@
-﻿using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Platform;
-using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Notifications.Sample.Portable;
+﻿using MvvmCross.Plugins.Notifications.Sample.Portable;
 using UIKit;
 
-namespace MvvmCross.Plugins.Notifications.Sample.iOS.iOS
+namespace MvvmCross.Plugins.Notifications.Samples.iOS
 {
 	public class Setup : MvxIosSetup
 	{

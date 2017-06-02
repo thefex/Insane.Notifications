@@ -111,6 +111,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GcmClient\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GcmRemotePushNotificationService.cs" />
     <Compile Include="MvxGcmBroadcastReceiver.cs" />
@@ -128,18 +129,16 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\MvvmCross.Plugins.Notifications\InsaneNotifications.csproj">
+    <ProjectReference Include="..\..\..\Core\Insane.Notifications\InsaneNotifications.csproj">
       <Project>{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}</Project>
       <Name>InsaneNotifications</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Core\MvvmCross.Plugins.Notifications.Droid\InsaneNotifications.Droid.csproj">
+    <ProjectReference Include="..\..\..\Core\Insane.Notifications.Droid\InsaneNotifications.Droid.csproj">
       <Project>{CBA10E8C-5A35-433A-9516-841861BA88B1}</Project>
       <Name>InsaneNotifications.Droid</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GcmClient\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Build.Download.0.4.2\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\..\packages\Xamarin.Build.Download.0.4.2\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\..\..\packages\Xamarin.Android.Support.Compat.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\..\..\packages\Xamarin.Android.Support.Compat.25.1.0\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />

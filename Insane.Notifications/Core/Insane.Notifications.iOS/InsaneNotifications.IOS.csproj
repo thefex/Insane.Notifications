@@ -83,18 +83,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmCross.Plugins.Notifications\InsaneNotifications.csproj">
+    <ProjectReference Include="..\Insane.Notifications\InsaneNotifications.csproj">
       <Project>{b3f139bd-b111-4c2a-ab5c-4ea65f23365f}</Project>
       <Name>InsaneNotifications</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenter\" />
-    <Folder Include="Data\" />
-    <Folder Include="Presenter\Handlers\" />
-    <Folder Include="Presenter\Handlers\Sound\" />
-    <Folder Include="Presenter\Handlers\Badge\" />
-    <Folder Include="Presenter\Handlers\Alert\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

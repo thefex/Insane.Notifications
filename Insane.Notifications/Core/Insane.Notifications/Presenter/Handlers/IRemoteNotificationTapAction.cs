@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace InsaneNotifications.UWP.Handlers
+﻿namespace MvvmCross.Plugins.Notifications.Presenter.Handlers
 {
     public interface IRemoteNotificationTapAction
     {

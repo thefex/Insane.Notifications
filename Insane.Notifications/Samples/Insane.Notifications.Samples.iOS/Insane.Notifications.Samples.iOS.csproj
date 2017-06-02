@@ -108,12 +108,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="ViewControllers\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -125,7 +128,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
+    <Compile Include="Application.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="ViewControllers\MainViewController.cs" />
@@ -134,15 +137,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\MvvmCross.Plugins.Notifications\MvvmCross.Plugins.Notifications.csproj">
+    <ProjectReference Include="..\..\Core\Insane.Notifications\InsaneNotifications.csproj">
       <Project>{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}</Project>
       <Name>InsaneNotifications</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Core\MvvmCross.Plugins.Notifications.IOS\MvvmCross.Plugins.Notifications.IOS.csproj">
+    <ProjectReference Include="..\..\Core\Insane.Notifications.iOS\InsaneNotifications.IOS.csproj">
       <Project>{7C34C763-0F64-449B-8A78-14D0A4917D49}</Project>
       <Name>InsaneNotifications.IOS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MvvmCross.Plugins.Notifications.Sample.Portable\MvvmCross.Plugins.Notifications.Sample.Portable.csproj">
+    <ProjectReference Include="..\Insane.Notifications.Sample.Portable\Insane.Notifications.Sample.Portable.csproj">
       <Project>{11FB2A36-E584-49E7-8688-AA1B6526BA91}</Project>
       <Name>Insane.Notifications.Sample.Portable</Name>
     </ProjectReference>

@@ -1,6 +1,6 @@
 using Android.Content;
-using Gcm.Client;
 using MvvmCross.Droid.Platform;
+using MvvmCross.Plugins.Notifications.Droid.GCM.GcmClient;
 using MvvmCross.Plugins.Notifications.Presenter;
 
 namespace MvvmCross.Plugins.Notifications.Droid.GCM

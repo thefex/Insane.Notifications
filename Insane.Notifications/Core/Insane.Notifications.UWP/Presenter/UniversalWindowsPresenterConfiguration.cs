@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using InsaneNotifications.UWP.Handlers;
+using InsaneNotifications.UWP.Handlers.Badge;
+using InsaneNotifications.UWP.Handlers.Tile;
+using InsaneNotifications.UWP.Handlers.Toast;
 
 namespace InsaneNotifications.UWP.Presenter
 {

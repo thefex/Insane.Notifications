@@ -114,11 +114,11 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\MvvmCross.Plugins.Notifications\MvvmCross.Plugins.Notifications.csproj">
+    <ProjectReference Include="..\..\..\Core\Insane.Notifications\InsaneNotifications.csproj">
       <Project>{B3F139BD-B111-4C2A-AB5C-4EA65F23365F}</Project>
       <Name>InsaneNotifications</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Core\MvvmCross.Plugins.Notifications.Droid\MvvmCross.Plugins.Notifications.Droid.csproj">
+    <ProjectReference Include="..\..\..\Core\Insane.Notifications.Droid\InsaneNotifications.Droid.csproj">
       <Project>{CBA10E8C-5A35-433A-9516-841861BA88B1}</Project>
       <Name>InsaneNotifications.Droid</Name>
     </ProjectReference>

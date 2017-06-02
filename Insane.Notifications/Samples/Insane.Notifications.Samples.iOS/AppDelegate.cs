@@ -4,7 +4,6 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Notifications.IOS;
-using MvvmCross.Plugins.Notifications.Sample.iOS.iOS;
 using UIKit;
 
 namespace MvvmCross.Plugins.Notifications.Samples.iOS

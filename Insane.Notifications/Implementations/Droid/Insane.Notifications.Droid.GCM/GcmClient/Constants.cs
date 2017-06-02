@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
-[assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")] //, ProtectionLevel = Android.Content.PM.Protection.Signature)]
+﻿[assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")] //, ProtectionLevel = Android.Content.PM.Protection.Signature)]
 [assembly: UsesPermission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
 [assembly: UsesPermission(Name = "com.google.android.c2dm.permission.RECEIVE")]
 
@@ -20,20 +8,9 @@ using Android.Widget;
 [assembly: UsesPermission(Name = "android.permission.WAKE_LOCK")]
 
 
-namespace Gcm.Client
+namespace MvvmCross.Plugins.Notifications.Droid.GCM.GcmClient
 {
-	public class Logger
-	{
-		public static bool Enabled = false;
-
-		public static void Debug(string msg)
-		{
-			if (Enabled)
-				Android.Util.Log.Debug("GCM-CLIENT", msg);
-		}
-	}
-
-	public class Constants
+    public class Constants
 	{
 		public const string INTENT_TO_GCM_REGISTRATION = "com.google.android.c2dm.intent.REGISTER";
 
