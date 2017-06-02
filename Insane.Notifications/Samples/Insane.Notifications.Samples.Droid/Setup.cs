@@ -1,9 +1,10 @@
 using System;
 using Android.Content;
+using Insane.Notifications;
+using Insane.Notifications.Droid.Local;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Platform;
-using MvvmCross.Plugins.Notifications.Droid.LocalNotifications;
 using MvvmCross.Plugins.Notifications.Droid.NotificationsBuilder;
 using MvvmCross.Plugins.Notifications.Sample.Portable;
 using MvvmCross.Plugins.Notifications.Sample.Portable.Data;
@@ -17,18 +18,18 @@ namespace MvvmCross.Plugins.Notifications.Samples.Droid
         {
         }
 
-        //protected override void InitializeLastChance()
-        //{
-        //    base.InitializeLastChance();
+        protected override void InitializeLastChance()
+        {
+            base.InitializeLastChance();
 
-	       // Mvx
-		      //  .RegisterType<MvxDroidNotificationCompatBuilder<LocalNotificationData>, LocalNotificationDataNotificationBuilder>();
+            Mvx
+                .RegisterType<MvxDroidNotificationCompatBuilder<LocalNotificationData>, LocalNotificationDataNotificationBuilder>();
 
-        //    Mvx
-        //        .RegisterType<INotificationsService>(
-        //            () =>
-        //            new MvxPeriodicLocalNotificationsService<AppLocalNotificationsPeriodicUpdateAlarmReceiver, AppLocalNotificationsService, LocalNotificationData>(ApplicationContext, TimeSpan.FromSeconds(60)));
-        //}
+            Mvx
+                .RegisterType<INotificationsService>(
+                    () =>
+                    new MvxPeriodicLocalNotificationsService<AppLocalNotificationsPeriodicUpdateAlarmReceiver, AppLocalNotificationsService, LocalNotificationData>(ApplicationContext, TimeSpan.FromSeconds(60)));
+        }
 
         protected override IMvxApplication CreateApp()
 			=> new MvxApp();

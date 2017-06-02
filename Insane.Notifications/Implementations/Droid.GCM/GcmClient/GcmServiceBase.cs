@@ -1,6 +1,10 @@
 ﻿using System;
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
 
-namespace MvvmCross.Plugins.Notifications.Droid.GCM.GcmClient
+namespace Insane.Notifications.Droid.GCM.GcmClient
 {
 	[Android.Runtime.Preserve(AllMembers = true)]
 	public abstract class GcmServiceBase : IntentService

@@ -1,4 +1,4 @@
-namespace MvvmCross.Plugins.Notifications.Droid.GCM.GcmClient
+namespace Insane.Notifications.Droid.GCM.GcmClient
 {
     public class Logger
     {

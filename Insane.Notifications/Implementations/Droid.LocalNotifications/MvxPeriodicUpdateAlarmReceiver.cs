@@ -3,7 +3,7 @@ using Android.Content;
 using Android.Runtime;
 using MvvmCross.Droid.Support.V4;
 
-namespace MvvmCross.Plugins.Notifications.Droid.LocalNotifications
+namespace Insane.Notifications.Droid.Local
 {
     public abstract class MvxPeriodicUpdateAlarmReceiver<TMvxDroidLocalNotificationsService, TNotificationData> :
             MvxWakefulBroadcastReceiver

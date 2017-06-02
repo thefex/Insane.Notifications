@@ -1,4 +1,5 @@
 ﻿using System;
+using MvvmCross.iOS.Views;
 using MvvmCross.Plugins.Notifications.Sample.Portable.ViewModels;
 
 namespace MvvmCross.Plugins.Notifications.Samples.iOS.ViewControllers

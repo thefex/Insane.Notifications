@@ -2,9 +2,9 @@ using System;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
-using MvvmCross.Plugins.Notifications.Data;
+using Insane.Notifications.Data;
 
-namespace MvvmCross.Plugins.Notifications.Droid.LocalNotifications
+namespace Insane.Notifications.Droid.Local
 {
     public class MvxPeriodicLocalNotificationsService<TPeriodicUpdateAlarmReceiver, TMvxDroidLocalNotificationsService,
             TNotificationData> : INotificationsService
@@ -24,7 +24,7 @@ namespace MvvmCross.Plugins.Notifications.Droid.LocalNotifications
             _requestCode = requestCode;
         }
 
-        public Task<ServiceResponse> SubscribeToNotifications()
+        public Task<ServiceResponse> SubscribeToNotifications(bool forceSubscribe = false)
         {
             var alarmManager = GetAlarmManager();
 

@@ -1,12 +1,12 @@
 using System;
 using Android.Content;
+using Insane.Notifications.Droid.GCM.GcmClient;
+using Insane.Notifications.Presenter;
+using Insane.Notifications.PushNotifications;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Platform;
-using MvvmCross.Plugins.Notifications.Droid.GCM.GcmClient;
-using MvvmCross.Plugins.Notifications.Presenter;
-using MvvmCross.Plugins.Notifications.PushNotifications;
 
-namespace MvvmCross.Plugins.Notifications.Droid.GCM
+namespace Insane.Notifications.Droid.GCM
 {
     public abstract class MvxGcmService : GcmServiceBase
     {

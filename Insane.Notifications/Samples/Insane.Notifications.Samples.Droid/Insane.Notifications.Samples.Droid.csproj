@@ -158,8 +158,8 @@
       <Project>{CBA10E8C-5A35-433A-9516-841861BA88B1}</Project>
       <Name>InsaneNotifications.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Implementations\Droid\Insane.Notifications.Droid.LocalNotifications\Insane.Notifications.Droid.Local.csproj">
-      <Project>{C85BBFCF-8F67-443B-A3EB-AF64A2A9A527}</Project>
+    <ProjectReference Include="..\..\Implementations\Droid.LocalNotifications\Insane.Notifications.Droid.Local.csproj">
+      <Project>{c85bbfcf-8f67-443b-a3eb-af64a2a9a527}</Project>
       <Name>Insane.Notifications.Droid.Local</Name>
     </ProjectReference>
     <ProjectReference Include="..\Insane.Notifications.Sample.Portable\Insane.Notifications.Sample.Portable.csproj">

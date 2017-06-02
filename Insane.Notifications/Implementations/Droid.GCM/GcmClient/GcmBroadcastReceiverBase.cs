@@ -2,8 +2,9 @@
 using Android.App;
 using Android.Content;
 using Android.Runtime;
+using Android.Support.V4.Content;
 
-namespace MvvmCross.Plugins.Notifications.Droid.GCM.GcmClient
+namespace Insane.Notifications.Droid.GCM.GcmClient
 {
 	public abstract class GcmBroadcastReceiverBase<TIntentService> : WakefulBroadcastReceiver where TIntentService : GcmServiceBase
 	{

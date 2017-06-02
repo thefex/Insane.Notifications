@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Android.App;
+using Android.Content;
+using Android.Content.PM;
+using Android.OS;
 
 // FORK of REDTH GCMClient library as it requires minor changes and it is not supported anymore...
 
-namespace MvvmCross.Plugins.Notifications.Droid.GCM.GcmClient
+namespace Insane.Notifications.Droid.GCM.GcmClient
 {
 	public class GcmClient
 	{

@@ -1,7 +1,7 @@
 using System;
 using Android.Content;
 using Android.Runtime;
-using MvvmCross.Plugins.Notifications.Droid.LocalNotifications;
+using Insane.Notifications.Droid.Local;
 using MvvmCross.Plugins.Notifications.Sample.Portable.Data;
 
 namespace MvvmCross.Plugins.Notifications.Samples.Droid.Services.LocalNotifications

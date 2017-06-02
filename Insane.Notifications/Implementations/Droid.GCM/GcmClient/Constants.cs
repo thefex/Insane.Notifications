@@ -1,4 +1,6 @@
-﻿[assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")] //, ProtectionLevel = Android.Content.PM.Protection.Signature)]
+﻿using Android.App;
+
+[assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")] //, ProtectionLevel = Android.Content.PM.Protection.Signature)]
 [assembly: UsesPermission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
 [assembly: UsesPermission(Name = "com.google.android.c2dm.permission.RECEIVE")]
 
@@ -8,7 +10,7 @@
 [assembly: UsesPermission(Name = "android.permission.WAKE_LOCK")]
 
 
-namespace MvvmCross.Plugins.Notifications.Droid.GCM.GcmClient
+namespace Insane.Notifications.Droid.GCM.GcmClient
 {
     public class Constants
 	{

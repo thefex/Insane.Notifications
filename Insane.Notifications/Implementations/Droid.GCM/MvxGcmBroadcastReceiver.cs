@@ -1,9 +1,8 @@
 using Android.Content;
+using Insane.Notifications.Droid.GCM.GcmClient;
 using MvvmCross.Droid.Platform;
-using MvvmCross.Plugins.Notifications.Droid.GCM.GcmClient;
-using MvvmCross.Plugins.Notifications.Presenter;
 
-namespace MvvmCross.Plugins.Notifications.Droid.GCM
+namespace Insane.Notifications.Droid.GCM
 {
     public abstract class MvxGcmBroadcastReceiver<TMvxGcmService> : GcmBroadcastReceiverBase<TMvxGcmService>
         where TMvxGcmService : MvxGcmService

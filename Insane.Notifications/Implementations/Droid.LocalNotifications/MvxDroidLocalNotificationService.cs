@@ -10,7 +10,7 @@ using MvvmCross.Droid.Services;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Notifications.Droid.NotificationsBuilder;
 
-namespace MvvmCross.Plugins.Notifications.Droid.LocalNotifications
+namespace Insane.Notifications.Droid.Local
 {
     public abstract class MvxDroidLocalNotificationService<TNotificationData> : MvxIntentService where TNotificationData : class
     {

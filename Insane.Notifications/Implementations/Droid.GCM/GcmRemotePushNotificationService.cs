@@ -1,11 +1,11 @@
 using System.Threading.Tasks;
 using Android.Content;
-using MvvmCross.Plugins.Notifications.CachedStorage;
-using MvvmCross.Plugins.Notifications.Data;
-using MvvmCross.Plugins.Notifications.PushNotifications;
+using Insane.Notifications.CachedStorage;
+using Insane.Notifications.Data;
+using Insane.Notifications.PushNotifications;
 using MvvmCross.Platform;
 
-namespace MvvmCross.Plugins.Notifications.Droid.GCM
+namespace Insane.Notifications.Droid.GCM
 {
     public class GcmRemotePushNotificationService : RemotePushNotificationService
     {
