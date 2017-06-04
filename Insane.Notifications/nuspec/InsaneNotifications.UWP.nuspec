@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="3.2">
-    <title>Insane.Notifications.Droid</title>
-    <id>Insane.Notifications.Droid</id>
+    <title>Insane.Notifications.UWP</title>
+    <id>Insane.Notifications.UWP</id>
     <version>1.0.0-prerelease1</version>
     <authors>InsaneLab.com, Przemysław Raciborski [thefex] with help of Erlend Angelsen [erlend]</authors>
-    <description>Xamarin library for creating and handling Notifications and things related to PUSH.</description>
+    <description>
+      Xamarin library for creating and handling Notifications and things related to PUSH made with passion in InsaneLab.com.
+      Package provides UWP PUSH Notification Services.
+    </description>
     <iconUrl>https://github.com/thefex/Insane.Notifications/raw/master/Insane.Notifications/il2.png</iconUrl>
     <dependencies>
       <group targetFramework="uap">
@@ -14,6 +17,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Core\InsaneNotifications.UWP\bin\Release\Insane.Notifications.Droid.GCM.dll" target="lib\uap" />
+    <file src="..\Core\Insane.Notifications.UWP\bin\Release\Insane.Notifications.UWP.dll" target="lib\uap" />
   </files>
 </package>

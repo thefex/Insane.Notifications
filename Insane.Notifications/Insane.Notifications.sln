@@ -7,7 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A588
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{3C91ECAD-C8E1-4971-A484-63CCF39AD650}"
 	ProjectSection(SolutionItems) = preProject
-		nuget.nuspec = nuget.nuspec
+		nuspec\InsaneNotifications.Droid.GCM.nuspec = nuspec\InsaneNotifications.Droid.GCM.nuspec
+		nuspec\InsaneNotifications.Droid.Local.nuspec = nuspec\InsaneNotifications.Droid.Local.nuspec
+		nuspec\InsaneNotifications.Droid.nuspec = nuspec\InsaneNotifications.Droid.nuspec
+		nuspec\InsaneNotifications.iOS.nuspec = nuspec\InsaneNotifications.iOS.nuspec
+		nuspec\InsaneNotifications.nuspec = nuspec\InsaneNotifications.nuspec
+		nuspec\InsaneNotifications.UWP.nuspec = nuspec\InsaneNotifications.UWP.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{68680D7D-8CEC-4FFA-8965-73C6940E4E96}"

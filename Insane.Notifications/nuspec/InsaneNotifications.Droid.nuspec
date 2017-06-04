@@ -5,7 +5,7 @@
     <id>Insane.Notifications.Droid</id>
     <version>1.0.0-prerelease1</version>
     <authors>InsaneLab.com, Przemysław Raciborski [thefex] with help of Erlend Angelsen [erlend]</authors>
-    <description>Xamarin library for creating and handling Notifications and things related to PUSH.</description>
+    <description>Xamarin library for creating and handling Notifications and things related to PUSH made with passion in InsaneLab.com.</description>
     <iconUrl>https://github.com/thefex/Insane.Notifications/raw/master/Insane.Notifications/il2.png</iconUrl>
     <dependencies>
       <group targetFramework="MonoAndroid71">
@@ -69,6 +69,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Core\InsaneNotifications.Droid\bin\Release\Insane.Notifications.Droid.dll" target="lib\MonoAndroid71" />
+    <file src="..\Core\Insane.Notifications.Droid\bin\Release\Insane.Notifications.Droid.dll" target="lib\MonoAndroid71" />
   </files>
 </package>

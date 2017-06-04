@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="3.2">
-    <title>Insane.Notifications.Droid</title>
-    <id>Insane.Notifications.Droid</id>
+    <title>Insane.Notifications.Droid.GCM</title>
+    <id>Insane.Notifications.Droid.GCM</id>
     <version>1.0.0-prerelease1</version>
     <authors>InsaneLab.com, Przemysław Raciborski [thefex] with help of Erlend Angelsen [erlend]</authors>
-    <description>Xamarin library for creating and handling Notifications and things related to PUSH.</description>
+    <description>
+      Xamarin library for creating and handling Notifications and things related to PUSH made with passion in InsaneLab.com.
+      Package provides PUSH Notification Services for Android GCM.
+    </description>
     <iconUrl>https://github.com/thefex/Insane.Notifications/raw/master/Insane.Notifications/il2.png</iconUrl>
     <dependencies>
       <group targetFramework="MonoAndroid71">
@@ -70,6 +73,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Implementation\InsaneNotifications.Droid.GCM\bin\Release\Insane.Notifications.Droid.GCM.dll" target="lib\MonoAndroid71" />
+    <file src="..\Implementations\Droid.GCM\bin\Release\Insane.Notifications.Droid.GCM.dll" target="lib\MonoAndroid71" />
   </files>
 </package>
