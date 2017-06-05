@@ -41,7 +41,7 @@ namespace MvvmCross.Plugins.Notifications.Droid.Extensions
             if (extrasBundle == null)
                 return new ServiceResponse<Type>().AddErrorMessage("Bundle is null");
 
-            var remoteNotificationTapActionHandlerTypeBundleKey = MvxDroidNotificationCompatBuilder<ServiceResponse>.TapActionIntentExtraName;
+            var remoteNotificationTapActionHandlerTypeBundleKey = DroidNotificationCompatBuilder<ServiceResponse>.TapActionIntentExtraName;
 
             if (!extrasBundle.ContainsKey(remoteNotificationTapActionHandlerTypeBundleKey))
                 return new ServiceResponse<Type>().AddErrorMessage("Extras do not have Tap Action Handler Type. Perhaps this push do not have any action on tap.");
@@ -55,7 +55,7 @@ namespace MvvmCross.Plugins.Notifications.Droid.Extensions
             if (extrasBundle == null)
                 return new ServiceResponse<string>().AddErrorMessage("Bundle is null");
 
-            var pushDataExtrasName = MvxDroidNotificationCompatBuilder<ServiceResponse>.PushDataExtraName;
+            var pushDataExtrasName = DroidNotificationCompatBuilder<ServiceResponse>.PushDataExtraName;
             if (!extrasBundle.ContainsKey(pushDataExtrasName))
                 return new ServiceResponse<string>().AddErrorMessage("Extras do not have PusH Data Extra Value inside bundle. Are you sure you have used " +
                                                                      "MvxDroidNotificationCompatBuilder<T> ?");

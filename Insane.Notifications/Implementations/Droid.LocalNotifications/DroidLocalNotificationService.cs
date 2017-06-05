@@ -6,34 +6,30 @@ using Android.App;
 using Android.Content;
 using Android.Runtime;
 using Android.Support.V4.Content;
-using MvvmCross.Droid.Services;
-using MvvmCross.Platform;
 using MvvmCross.Plugins.Notifications.Droid.NotificationsBuilder;
 
 namespace Insane.Notifications.Droid.Local
 {
-    public abstract class MvxDroidLocalNotificationService<TNotificationData> : MvxIntentService where TNotificationData : class
+    public abstract class DroidLocalNotificationService<TNotificationData> : IntentService where TNotificationData : class
     {
 	    private static int notificationId = 0;
 
-        protected MvxDroidLocalNotificationService(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
+        protected DroidLocalNotificationService(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
         {
         }
 
-        protected MvxDroidLocalNotificationService(string name) : base(name)
+        protected DroidLocalNotificationService(string name) : base(name)
         {
         }
 
-		protected MvxDroidLocalNotificationService() : this(string.Empty)
+		protected DroidLocalNotificationService() : this(string.Empty)
         {
 
         }
 
         protected override async void OnHandleIntent(Intent intent)
         {
-            base.OnHandleIntent(intent);
-
-            var notificationBuilder = Mvx.Resolve<MvxDroidNotificationCompatBuilder<TNotificationData>>();
+            var notificationBuilder = GetNotificationCompatBuilder(); Mvx.Resolve<DroidNotificationCompatBuilder<TNotificationData>>();
             var notificationManager = (NotificationManager)ApplicationContext.GetSystemService(NotificationService);
 
             foreach (var notificationData in await GetNotificationsData())
@@ -44,6 +40,8 @@ namespace Insane.Notifications.Droid.Local
             
             WakefulBroadcastReceiver.CompleteWakefulIntent(intent);
         }
+
+        protected abstract DroidNotificationCompatBuilder<TNotificationData> GetNotificationCompatBuilder();
 
         protected abstract Task<IEnumerable<TNotificationData>> GetNotificationsData();
     }

@@ -5,20 +5,20 @@ using UserNotifications;
 
 namespace Insane.Notifications.iOS.Internal
 {
-	public class MvxUNUserNotificationCenterDelegate : UNUserNotificationCenterDelegate
+	public class InsaneNotificationsNUserNotificationCenterDelegate : UNUserNotificationCenterDelegate
 	{
         readonly IIOSRemoteNotificationsPresenter remoteNotificationsPresenter;
 
-        public MvxUNUserNotificationCenterDelegate(IIOSRemoteNotificationsPresenter remoteNotificationsPresenter)
+        public InsaneNotificationsNUserNotificationCenterDelegate(IIOSRemoteNotificationsPresenter remoteNotificationsPresenter)
 	    {
             this.remoteNotificationsPresenter = remoteNotificationsPresenter;
         }
 
-	    protected MvxUNUserNotificationCenterDelegate(NSObjectFlag t) : base(t)
+	    protected InsaneNotificationsNUserNotificationCenterDelegate(NSObjectFlag t) : base(t)
 	    {
 	    }
 
-	    protected internal MvxUNUserNotificationCenterDelegate(IntPtr handle) : base(handle)
+	    protected internal InsaneNotificationsNUserNotificationCenterDelegate(IntPtr handle) : base(handle)
 	    {
 	    }
 

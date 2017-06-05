@@ -6,17 +6,17 @@ using Insane.Notifications.Data;
 
 namespace Insane.Notifications.Droid.Local
 {
-    public class MvxPeriodicLocalNotificationsService<TPeriodicUpdateAlarmReceiver, TMvxDroidLocalNotificationsService,
+    public class PeriodicLocalNotificationsService<TPeriodicUpdateAlarmReceiver, TDroidLocalNotificationService,
             TNotificationData> : INotificationsService
-        where TPeriodicUpdateAlarmReceiver : MvxPeriodicUpdateAlarmReceiver<TMvxDroidLocalNotificationsService, TNotificationData>
-        where TMvxDroidLocalNotificationsService : MvxDroidLocalNotificationService<TNotificationData>
+        where TPeriodicUpdateAlarmReceiver : PeriodicUpdateAlarmReceiver<TDroidLocalNotificationService, TNotificationData>
+        where TDroidLocalNotificationService : DroidLocalNotificationService<TNotificationData>
         where TNotificationData : class
     {
         private readonly Context _context;
         private readonly int _requestCode;
         private readonly TimeSpan _updateAfterTimeSpan;
 
-        public MvxPeriodicLocalNotificationsService(Context context, TimeSpan updateAfterTimeSpan,
+        public PeriodicLocalNotificationsService(Context context, TimeSpan updateAfterTimeSpan,
             int requestCode = 1005)
         {
             _context = context;

@@ -7,9 +7,9 @@ using UIKit;
 
 namespace Insane.Notifications.iOS
 {
-    public class MvxRemotePushNotificationServiceIos : RemotePushNotificationService
+    public class iOSRemotePushNotificationServiceIos : RemotePushNotificationService
     {
-        public MvxRemotePushNotificationServiceIos(IPersistedStorage persistedStorage,
+        public iOSRemotePushNotificationServiceIos(IPersistedStorage persistedStorage,
             IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider)
             : base(persistedStorage, remotePushRegistrationService, pushTagsProvider)
         {
@@ -22,7 +22,7 @@ namespace Insane.Notifications.iOS
 
         protected override async Task<ServiceResponse> LaunchRegistrationProcess(bool forceSubscribe = false)
         {
-            var permissionRequestResponse = await MvxIoSNotificationsSetup.RequestPermissions();
+            var permissionRequestResponse = await PushiOSNotificationsSetup.RequestPermissions();
 
             if (!permissionRequestResponse.IsSuccess)
                 return permissionRequestResponse;

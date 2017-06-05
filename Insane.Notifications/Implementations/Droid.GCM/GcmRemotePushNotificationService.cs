@@ -3,19 +3,18 @@ using Android.Content;
 using Insane.Notifications.CachedStorage;
 using Insane.Notifications.Data;
 using Insane.Notifications.PushNotifications;
-using MvvmCross.Platform;
 
 namespace Insane.Notifications.Droid.GCM
 {
     public class GcmRemotePushNotificationService : RemotePushNotificationService
     {
         private readonly string _pushSenderId;
+        readonly Context androidContext;
 
-        public GcmRemotePushNotificationService(IPersistedStorage persistedStorage,
-            IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider,
-            string pushSenderId)
+        public GcmRemotePushNotificationService(IPersistedStorage persistedStorage, IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider, Context androidContext, string pushSenderId)
             : base(persistedStorage, remotePushRegistrationService, pushTagsProvider)
         {
+            this.androidContext = androidContext;
             _pushSenderId = pushSenderId;
         }
 
@@ -24,7 +23,6 @@ namespace Insane.Notifications.Droid.GCM
 
         protected override Task<ServiceResponse> LaunchRegistrationProcess(bool forceSubscribe = false)
         {
-            var androidContext = Mvx.Resolve<Context>();
             GcmClient.GcmClient.CheckDevice(androidContext);
             GcmClient.GcmClient.CheckManifest(androidContext);
             GcmClient.GcmClient.Register(androidContext, _pushSenderId);
@@ -33,7 +31,6 @@ namespace Insane.Notifications.Droid.GCM
 
         protected override Task<ServiceResponse> LaunchUnregistrationProcess()
         {
-            var androidContext = Mvx.Resolve<Context>();
             GcmClient.GcmClient.UnRegister(androidContext);
 			return Task.FromResult(new ServiceResponse());
         }

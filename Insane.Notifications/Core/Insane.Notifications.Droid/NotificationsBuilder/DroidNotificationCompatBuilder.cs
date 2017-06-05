@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace MvvmCross.Plugins.Notifications.Droid.NotificationsBuilder
 {
-    public abstract class MvxDroidNotificationCompatBuilder<TNotificationData> : IMvxDroidNotificationBuilder<TNotificationData> where TNotificationData : class
+    public abstract class DroidNotificationCompatBuilder<TNotificationData> : IDroidNotificationBuilder<TNotificationData> where TNotificationData : class
     {
         public const string TapActionIntentExtraName = "INSANELAB_NOTIFICATIONS_tap_action_handler";
         public const string PushDataExtraName = "INSANELAB_NOTIFICATION_push_data";

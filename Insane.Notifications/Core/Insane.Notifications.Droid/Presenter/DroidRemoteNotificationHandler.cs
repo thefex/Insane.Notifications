@@ -25,6 +25,6 @@ namespace MvvmCross.Plugins.Notifications.Droid.Presenter
             return true;
         }
 
-        protected abstract IMvxDroidNotificationBuilder<TNotification> GetNotificationBuilder();
+        protected abstract IDroidNotificationBuilder<TNotification> GetNotificationBuilder();
     }
 }
