@@ -27,7 +27,7 @@ This API is also deployed here:
 http://xamarinpushplugintests.azurewebsites.net/swagger/ui/index
 
 # Acknowledgment 
-This library has been created thanks to help and support from InsaneLab.com.
+This library has been created thanks to help and support from InsaneLab.com (http://www.insanelab.com).
 Thanks for giving me time to work on this project - you guys rock :-)
 
 Also, many thanks to Erlend Angelsen for some great ideas and insights.
