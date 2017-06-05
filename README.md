@@ -9,10 +9,13 @@ InsaneNotifications.* (platform)
 1.0.0-prerelease
 - initial library release
 
-# Things TODO - "ROADMAP"
-1. Remove tight coupling with MvvmCross and release Mvx support as separated package.
-2. Implement iOS Local Notifications
-3. Improve Android Local Notifications sample
+# Things TODO - "ROADMAP sorted by importance"
+1. Remove tight coupling with MvvmCross and release Mvx support as separated package. [WIP]
+2. Implement PUSH (GCM/UWP/APNS) sample. [WIP]
+3. Write PUSH related servies documentation. [WIP]
+4. Implement iOS Local Notifications
+5. Improve Android Local Notifications sample
+6. Write Local Notifications documentation.
 
 # Sample - PUSH Notifications - Azure Notification Hub Backend
 As current version is mainly focused on PUSH Based of Azure Notification Hubs I have prepared C# ASP.Net WebAPI sample project - implementation of Azure Notification Hub usage / push send.
