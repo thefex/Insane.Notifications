@@ -26,17 +26,27 @@ namespace Insane.Notifications.PushSample.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            NavigationController.SetNavigationBarHidden(true, false);
 
+            UIImageView logoImage = new UIImageView(UIImage.FromBundle("Image"));
+
+			UILabel companyLabel = new UILabel();
+			companyLabel.TextColor = UIColor.Black;
+			companyLabel.Font = UIFont.SystemFontOfSize(16, UIFontWeight.Light);
+            companyLabel.Text = "Insane Notifications";
+         
             UILabel label = new UILabel();
             label.TextColor = UIColor.Black;
-            label.Font = UIFont.SystemFontOfSize(20, UIFontWeight.Medium);
+            label.Font = UIFont.SystemFontOfSize(18, UIFontWeight.Light);
+            label.Lines = 2;
+            label.TextAlignment = UITextAlignment.Center;
 
-            var subscribeToPushButton = new UIButton();
+            var subscribeToPushButton = new UIButton(UIButtonType.System);
             subscribeToPushButton.SetTitle("Subscribe to push", UIControlState.Normal);
             subscribeToPushButton.SetTitle("Subscribe to push", UIControlState.Highlighted);
             subscribeToPushButton.SetTitle("Subscribe to push", UIControlState.Disabled);
 
-            var unsubscribeFromPushButton = new UIButton();
+            var unsubscribeFromPushButton = new UIButton(UIButtonType.System);
             unsubscribeFromPushButton.SetTitle("Unsubscribe from push", UIControlState.Normal);
             unsubscribeFromPushButton.SetTitle("Unsubscribe from push", UIControlState.Highlighted);
             unsubscribeFromPushButton.SetTitle("Unsubscribe from push", UIControlState.Disabled);
@@ -62,27 +72,38 @@ namespace Insane.Notifications.PushSample.iOS
                       .To(x => x.UnsubscribeFromPush);
 
             bindingSet.Apply();
+            Add(logoImage);
+            Add(companyLabel);
             Add(label);
             Add(subscribeToPushButton);
             Add(unsubscribeFromPushButton);
 
 			View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
 
-			View.AddConstraints(
-                label.WithSameLeft(View),
-                label.WithSameRight(View),
-                label.Height().EqualTo(120),
-                label.AtTopOf(View).Plus(35),
+            View.AddConstraints(
+                logoImage.AtTopOf(View, 30),
+                logoImage.WithSameCenterX(View),
 
+                companyLabel.Below(logoImage, 10),
+				companyLabel.WithSameCenterX(View),
+
+                label.AtTopOf(companyLabel, 40),
+                label.AtLeftOf(View, 40),
+                label.AtRightOf(View, 40),
+                label.Height().EqualTo(120),
+                label.WithSameCenterX(View),
+
+				subscribeToPushButton.WithSameCenterX(label),
                 subscribeToPushButton.Below(label, 35),
 
                 subscribeToPushButton.Height().EqualTo(50),
-                subscribeToPushButton.WithSameLeft(View),
-                subscribeToPushButton.WithSameRight(View),
+                subscribeToPushButton.AtLeftOf(View, 40),
+                subscribeToPushButton.AtRightOf(View, 40),
 
                 unsubscribeFromPushButton.Below(subscribeToPushButton, 15),
                 unsubscribeFromPushButton.Height().EqualTo(50),
-                unsubscribeFromPushButton.WithSameCenterX(View)
+                unsubscribeFromPushButton.WithSameCenterX(subscribeToPushButton),
+                subscribeToPushButton.WithSameCenterX(View)
             );
         }
     }
