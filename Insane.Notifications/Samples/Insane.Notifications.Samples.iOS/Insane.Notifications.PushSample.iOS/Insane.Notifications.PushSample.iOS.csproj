@@ -153,6 +153,7 @@
     <Compile Include="Services\AppNotificationsIdProvider.cs" />
     <Compile Include="Services\Handlers\InformationPushNotificationHandler.cs" />
     <Compile Include="MainViewController.cs" />
+    <Compile Include="LinkerPleaseInclude.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\Insane.Notifications.iOS\InsaneNotifications.IOS.csproj">
