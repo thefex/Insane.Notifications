@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<style name="appThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+		<item name="android:windowTranslucentStatus">false</item>
+		<item name="android:statusBarColor">@color/primaryDark</item>
+		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
+	</style>
+	
+	<style name="appTheme" parent="appThemeBase">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+		<item name="android:windowBackground">@android:color/white</item>
+		<item name="android:colorBackground">@android:color/white</item>
+		<item name="colorPrimary">@color/primary</item>
+		<item name="colorPrimaryDark">@color/primaryDark</item>
+		<item name="colorAccent">@color/accentColor</item>
+		<item name="colorControlNormal">@color/colorControlNormal</item>
+		<item name="colorControlHighlight">@color/colorControlHighlight</item>
+		<item name="android:colorPrimary">@color/primary</item>
+		<item name="android:colorPrimaryDark">@color/primaryDark</item>
+		<item name="android:colorAccent">@color/accentColor</item>
+		<item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+	</style>
+</resources>

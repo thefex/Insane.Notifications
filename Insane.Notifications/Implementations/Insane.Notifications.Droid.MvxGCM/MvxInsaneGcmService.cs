@@ -4,6 +4,7 @@ using Insane.Notifications.Droid.GCM;
 using Insane.Notifications.PushNotifications;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Platform;
+using Insane.Notifications.Presenter;
 
 namespace Insane.Notifications.Droid.MvxGCM
 {
@@ -68,6 +69,11 @@ namespace Insane.Notifications.Droid.MvxGCM
                 throw new InvalidOperationException(
                     $"{nameof(GcmRemotePushNotificationService)} is not registered for type: {nameof(INotificationsService)}");
             return notificationsService;
+        }
+
+        protected override IRemoteNotificationsPresenter GetRemoteNotificationsPresenter()
+        {
+            return Mvx.Resolve<IRemoteNotificationsPresenter>();
         }
     }
 }

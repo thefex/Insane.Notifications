@@ -32,7 +32,7 @@ namespace Insane.Notifications.Droid.MvxLocal
             base.OnHandleIntent(intent);
         }
 
-        protected override DroidNotificationCompatBuilder<TNotificationData> GetNotificationCompatBuilder()
+        protected virtual override DroidNotificationCompatBuilder<TNotificationData> GetNotificationCompatBuilder()
         {
             return Mvx.Resolve<DroidNotificationCompatBuilder<TNotificationData>>();
         }

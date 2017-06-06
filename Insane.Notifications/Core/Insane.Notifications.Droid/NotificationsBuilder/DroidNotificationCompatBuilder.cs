@@ -5,7 +5,7 @@ using Insane.Notifications.Data;
 using Insane.Notifications.Presenter.Handlers;
 using Newtonsoft.Json;
 
-namespace MvvmCross.Plugins.Notifications.Droid.NotificationsBuilder
+namespace Insane.Notifications.Droid.NotificationsBuilder
 {
     public abstract class DroidNotificationCompatBuilder<TNotificationData> : IDroidNotificationBuilder<TNotificationData> where TNotificationData : class
     {

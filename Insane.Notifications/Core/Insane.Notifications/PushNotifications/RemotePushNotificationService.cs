@@ -30,6 +30,8 @@ namespace Insane.Notifications.PushNotifications
 
         protected abstract bool IsUserRegisteredToPushService { get; }
 
+        public bool IsSubscribedToNotifications => IsUserRegisteredToPushService;
+
         public async Task<ServiceResponse> SubscribeToNotifications(bool forceSubscribe = false)
         {
 			try
@@ -41,14 +43,26 @@ namespace Insane.Notifications.PushNotifications
 
 				_registerPushTcs = new TaskCompletionSource<ServiceResponse<string>>();
 				var registrationLaunchProcessResponse = await LaunchRegistrationProcess(forceSubscribe);
-				if (!registrationLaunchProcessResponse.IsSuccess)
-					return registrationLaunchProcessResponse;
+                if (!registrationLaunchProcessResponse.IsSuccess)
+                    return registrationLaunchProcessResponse;
 
 				var deviceRegistrationHandleResponse = await _registerPushTcs.Task.ConfigureAwait(false);
-				if (!deviceRegistrationHandleResponse.IsSuccess)
-					return deviceRegistrationHandleResponse;
+                if (!deviceRegistrationHandleResponse.IsSuccess)
+                {
+                    await LaunchUnregistrationProcess();
+                    return deviceRegistrationHandleResponse;
+                }
 
-				return await SubscribeToPushNotifications(deviceRegistrationHandleResponse.Result).ConfigureAwait(false);
+				var subscribeResponse = await SubscribeToPushNotifications(deviceRegistrationHandleResponse.Result).ConfigureAwait(false);
+
+                if (!subscribeResponse.IsSuccess)
+                {
+                    await LaunchUnregistrationProcess();
+                    return subscribeResponse;
+                }
+                
+
+                return subscribeResponse;
 			}
 			finally
 			{

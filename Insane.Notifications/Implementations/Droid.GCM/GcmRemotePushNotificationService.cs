@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Android.Content;
 using Insane.Notifications.CachedStorage;
 using Insane.Notifications.Data;
+using Insane.Notifications.Droid.CachedStorage;
 using Insane.Notifications.PushNotifications;
 
 namespace Insane.Notifications.Droid.GCM
@@ -11,6 +12,12 @@ namespace Insane.Notifications.Droid.GCM
         private readonly string _pushSenderId;
         readonly Context androidContext;
 
+        public GcmRemotePushNotificationService(IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider, Context androidContext, string pushSenderId)
+            : this(new DroidDefaultPersistedStorage(androidContext),remotePushRegistrationService, pushTagsProvider, androidContext, pushSenderId)
+        {
+
+        }
+
         public GcmRemotePushNotificationService(IPersistedStorage persistedStorage, IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider, Context androidContext, string pushSenderId)
             : base(persistedStorage, remotePushRegistrationService, pushTagsProvider)
         {
@@ -19,7 +26,7 @@ namespace Insane.Notifications.Droid.GCM
         }
 
         protected override PushPlatformType PlatformType => PushPlatformType.Android;
-        protected override bool IsUserRegisteredToPushService => GcmClient.GcmClient.IsRegistered(Mvx.Resolve<Context>());
+        protected override bool IsUserRegisteredToPushService => GcmClient.GcmClient.IsRegistered(androidContext);
 
         protected override Task<ServiceResponse> LaunchRegistrationProcess(bool forceSubscribe = false)
         {

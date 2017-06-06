@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<resources>
+    <color name="primaryLight">#4571b3</color>
+    <color name="primary">#2B5799</color>
+    <color name="primaryDark">#19407B</color>
+  
+    <color name="primaryGradientStart">#2B5799</color>
+    <color name="primaryGradientEnd">#8EA9DE</color>
+  
+    <color name="accentColor">#808080</color>
+    <color name="colorControlNormal">#FFFFFF</color>
+    <color name="darkColorControlNormal">#000000</color>
+    <color name="colorControlHighlight">#19407B</color>
+
+    <color name="grayBackgroundColor">#E9EDF1</color>
+    <color name="grayTextColor">#B0B0B0</color>
+ 
+
+    <color name="buttonDisabled">#19407B</color>
+    <color name="buttonEnabled">#19407B</color>
+
+    <color name="loadingProgressColor">#2d92d0</color>
+  
+</resources>

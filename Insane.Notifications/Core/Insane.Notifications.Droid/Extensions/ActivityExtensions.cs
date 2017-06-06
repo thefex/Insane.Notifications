@@ -2,11 +2,10 @@
 using Android.OS;
 using Insane.Notifications.Data;
 using Insane.Notifications.Presenter.Handlers;
-using MvvmCross.Plugins.Notifications.Droid.NotificationsBuilder;
-using MvvmCross.Plugins.Notifications.Droid.Presenter;
 using Newtonsoft.Json;
+using Insane.Notifications.Droid.NotificationsBuilder;
 
-namespace MvvmCross.Plugins.Notifications.Droid.Extensions
+namespace Insane.Notifications.Droid.Extensions
 {
     public static class ActivityExtensions
     {
