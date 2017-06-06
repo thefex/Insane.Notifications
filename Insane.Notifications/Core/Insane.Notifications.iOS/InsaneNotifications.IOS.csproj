@@ -60,6 +60,7 @@
     <Compile Include="Internal\NotificationTappedHandler.cs" />
     <Compile Include="Presenter\Handlers\IIOSRemoteNotificationTapAction.cs" />
     <Compile Include="Presenter\Handlers\iOSRemoteNotificationTapAction.cs" />
+    <Compile Include="CachedStorage\iOSDefaultPersistedStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Insane.Notifications\InsaneNotifications.csproj">
@@ -68,5 +69,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CachedStorage\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

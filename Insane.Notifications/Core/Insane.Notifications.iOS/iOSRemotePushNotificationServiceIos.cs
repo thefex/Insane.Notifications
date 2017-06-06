@@ -2,6 +2,7 @@
 using Foundation;
 using Insane.Notifications.CachedStorage;
 using Insane.Notifications.Data;
+using Insane.Notifications.iOS.CachedStorage;
 using Insane.Notifications.PushNotifications;
 using UIKit;
 
@@ -9,6 +10,12 @@ namespace Insane.Notifications.iOS
 {
     public class iOSRemotePushNotificationServiceIos : RemotePushNotificationService
     {
+        public iOSRemotePushNotificationServiceIos(IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider)
+            : this(new iOSDefaultPersistedStorage(), remotePushRegistrationService, pushTagsProvider)
+        {
+
+        }
+
         public iOSRemotePushNotificationServiceIos(IPersistedStorage persistedStorage,
             IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider)
             : base(persistedStorage, remotePushRegistrationService, pushTagsProvider)
