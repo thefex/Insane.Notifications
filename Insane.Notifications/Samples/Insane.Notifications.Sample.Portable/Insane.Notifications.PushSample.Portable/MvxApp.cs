@@ -15,7 +15,7 @@ namespace MvvmCross.Plugins.Notifications.Sample.Portable
         {
             base.Initialize();
 
-            Mvx.RegisterSingleton<HttpClient>(() => new HttpClient(new HttpClientHandler()));
+            Mvx.RegisterType<HttpClient>(() => new HttpClient(new HttpClientHandler()));
             Mvx.RegisterType<MainViewModel, MainViewModel>();
 			Mvx.RegisterType<IMvxAppStart, MvxAppStart<MainViewModel>>();
 

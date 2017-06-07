@@ -15,6 +15,9 @@ namespace Insane.Notifications.UWP
         private const string ShouldForceSubcribeToPushSettingsKey =
             "INSANELAB_NOTIFICATIONS_SHOULD_FORCE_SUBSCRIBE_KEY";
 
+        public static PushNotificationChannel PushNotificationChannel { get; private set; }
+        private static IUniversalWindowsRemoteNotificationsPresenter _notificationsPresenter;
+
         public static void HandlePushActivation(IActivatedEventArgs e, IUniversalWindowsRemoteNotificationsPresenter presenter)
         {
             var toastNotificationActivatedEventArgs = e as ToastNotificationActivatedEventArgs;
@@ -25,8 +28,16 @@ namespace Insane.Notifications.UWP
             presenter.HandleRemoteNotificationActivation(toastNotificationActivatedEventArgs.Argument ?? string.Empty);
         }
 
-        public static void HandlePushRelatedBackgroundActivation(BackgroundActivatedEventArgs args, IRemoteNotificationsPresenter notificationsPresenter, INotificationsService notificationsService)
+        public static bool IsPushRelatedBackgroundTask(BackgroundActivatedEventArgs args)
         {
+            return args.TaskInstance.Task.Name == PushBackgroundTaskNotificationServiceDecorator.BackgroundTaskName ||
+                   args.TaskInstance.Task.Name == PushInvalidateRegistrationAppUpdateBackgroundTaskNotificationsServiceDecorator.BackgroundTaskName;
+
+        }
+
+        public static void HandlePushRelatedBackgroundActivation(BackgroundActivatedEventArgs args, IUniversalWindowsRemoteNotificationsPresenter notificationsPresenter, INotificationsService notificationsService)
+        {
+            PushServicesExtensions.SetupNotificationsIfNeeded(notificationsService, notificationsPresenter);
             if (args.TaskInstance.Task.Name == PushBackgroundTaskNotificationServiceDecorator.BackgroundTaskName)
                 notificationsPresenter.HandleNotification((args.TaskInstance.TriggerDetails as RawNotification).Content);
 
@@ -53,9 +64,18 @@ namespace Insane.Notifications.UWP
 
         private static bool isNotificationInSetup = false;
         private static object synchronizationObject = new object();
-        public static Task SetupNotificationsIfNeeded(INotificationsService notificationsService)
+
+        public static async Task SetupNotificationsIfNeeded(INotificationsService notificationsService, IUniversalWindowsRemoteNotificationsPresenter notificationsPresenter)
         {
-            return Task.Run(async () =>
+            _notificationsPresenter = notificationsPresenter;
+            if (PushNotificationChannel == null)
+            {
+                PushNotificationChannel = await PushNotificationChannelManager
+                    .CreatePushNotificationChannelForApplicationAsync();
+                PushNotificationChannel.PushNotificationReceived += PushChannel_PushNotificationReceived;
+            }
+
+            await Task.Run(async () =>
             {
                 bool? booleanValue = false;
                 lock (synchronizationObject)
@@ -81,5 +101,17 @@ namespace Insane.Notifications.UWP
 
         }
 
+        private static void PushChannel_PushNotificationReceived(PushNotificationChannel sender, PushNotificationReceivedEventArgs args)
+        {
+            if (args.NotificationType == PushNotificationType.Raw)
+            {
+                args.Cancel = true;
+                _notificationsPresenter.HandleNotification(args.RawNotification.Content);
+            }
+            else
+            {
+                _notificationsPresenter.HandlePlatformNotification(args);
+            }
+        }
     }
 }

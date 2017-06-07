@@ -46,23 +46,31 @@ namespace Insane.Notifications.PushNotifications
                 if (!registrationLaunchProcessResponse.IsSuccess)
                     return registrationLaunchProcessResponse;
 
-				var deviceRegistrationHandleResponse = await _registerPushTcs.Task.ConfigureAwait(false);
-                if (!deviceRegistrationHandleResponse.IsSuccess)
-                {
-                    await LaunchUnregistrationProcess();
-                    return deviceRegistrationHandleResponse;
-                }
+			    try
+			    {
+			        var deviceRegistrationHandleResponse = await _registerPushTcs.Task.ConfigureAwait(false);
+			        if (!deviceRegistrationHandleResponse.IsSuccess)
+			        {
+			            await LaunchUnregistrationProcess();
+			            return deviceRegistrationHandleResponse;
+			        }
 
-				var subscribeResponse = await SubscribeToPushNotifications(deviceRegistrationHandleResponse.Result).ConfigureAwait(false);
+			        var subscribeResponse = await SubscribeToPushNotifications(deviceRegistrationHandleResponse.Result)
+			            .ConfigureAwait(false);
 
-                if (!subscribeResponse.IsSuccess)
-                {
-                    await LaunchUnregistrationProcess();
-                    return subscribeResponse;
-                }
-                
+			        if (!subscribeResponse.IsSuccess)
+			        {
+			            await LaunchUnregistrationProcess();
+			            return subscribeResponse;
+			        }
 
-                return subscribeResponse;
+			        return subscribeResponse;
+			    }
+			    catch (Exception)
+			    {
+			        await LaunchUnregistrationProcess();
+			        throw;
+			    }
 			}
 			finally
 			{

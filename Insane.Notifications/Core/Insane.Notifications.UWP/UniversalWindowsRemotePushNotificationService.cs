@@ -4,49 +4,49 @@ using Windows.Networking.PushNotifications;
 using Insane.Notifications.CachedStorage;
 using Insane.Notifications.Data;
 using Insane.Notifications.PushNotifications;
+using Insane.Notifications.UWP.Internal;
 using Insane.Notifications.UWP.Presenter;
+using Insane.Notifications.UWP.Storage;
 
 namespace Insane.Notifications.UWP
 {
     internal class UniversalWindowsRemotePushNotificationService : RemotePushNotificationService
     {
-        private readonly IUniversalWindowsRemoteNotificationsPresenter _remoteNotificationsPresenter;
-        private bool isRegisteredToPush;
-        private PushNotificationChannel pushChannel;
+        private const string IsRegisteredToPushKey = "IsRegisteredToPushUwpKey";
+        private readonly IPersistedStorage _persistedStorage;
 
-        public UniversalWindowsRemotePushNotificationService(IPersistedStorage persistedStorage, IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider, IUniversalWindowsRemoteNotificationsPresenter remoteNotificationsPresenter) : base(persistedStorage, remotePushRegistrationService, pushTagsProvider)
+        public UniversalWindowsRemotePushNotificationService(
+            IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider)
+            : this(new UWPDefaultPersistedStorage(), remotePushRegistrationService, pushTagsProvider)
         {
-            _remoteNotificationsPresenter = remoteNotificationsPresenter;
+        }
+
+        public UniversalWindowsRemotePushNotificationService(IPersistedStorage persistedStorage,
+            IRemotePushRegistrationService remotePushRegistrationService, IPushTagsProvider pushTagsProvider) : base(persistedStorage,
+            remotePushRegistrationService, pushTagsProvider)
+        {
+            _persistedStorage = persistedStorage;
         }
 
 
         protected override PushPlatformType PlatformType => PushPlatformType.Windows;
-        protected override bool IsUserRegisteredToPushService => isRegisteredToPush;
+
+        protected override bool IsUserRegisteredToPushService => _persistedStorage.Has(IsRegisteredToPushKey) &&
+                                                                 _persistedStorage
+                                                                     .Get<ValueTypeWrapper<bool>>(IsRegisteredToPushKey)
+                                                                     .Data;
 
         protected override async Task<ServiceResponse> LaunchRegistrationProcess(bool forceSubscribe = false)
         {
             if (IsUserRegisteredToPushService && !forceSubscribe)
                 return new ServiceResponse().AddErrorMessage("User is already registerd to push.");
 
-            pushChannel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+            var pushChannel = PushServicesExtensions.PushNotificationChannel;
 
             NotifyThatRegistrationSucceed(pushChannel.Uri);
-            pushChannel.PushNotificationReceived += PushChannel_PushNotificationReceived;
+            _persistedStorage.SaveOrUpdate(IsRegisteredToPushKey, new ValueTypeWrapper<bool> {Data = true});
 
             return new ServiceResponse();
-        }
-
-        private void PushChannel_PushNotificationReceived(PushNotificationChannel sender, PushNotificationReceivedEventArgs args)
-        {
-            if (args.NotificationType == PushNotificationType.Raw)
-            {
-                args.Cancel = true;
-                _remoteNotificationsPresenter.HandleNotification(args.RawNotification.Content);
-            }
-            else
-            {
-                _remoteNotificationsPresenter.HandlePlatformNotification(args);
-            }
         }
 
         protected override Task<ServiceResponse> LaunchUnregistrationProcess()
@@ -54,13 +54,18 @@ namespace Insane.Notifications.UWP
             if (!IsUserRegisteredToPushService)
                 return Task.FromResult(new ServiceResponse().AddErrorMessage("User is not registerd to push"));
 
-            pushChannel.PushNotificationReceived -= PushChannel_PushNotificationReceived;
-            pushChannel = null;
+            _persistedStorage.SaveOrUpdate(IsRegisteredToPushKey, new ValueTypeWrapper<bool>
+            {
+                Data = false
+            });
             NotifyThatUnregistrationSucceed();
-        
+
             return Task.FromResult(new ServiceResponse());
         }
 
-        protected override string ParseRegistrationId(string registrationId) => registrationId;
+        protected override string ParseRegistrationId(string registrationId)
+        {
+            return registrationId;
+        }
     }
 }

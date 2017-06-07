@@ -53,6 +53,8 @@ namespace Insane.Notifications.UWP.Internal
             return response;
         }
 
+        public bool IsSubscribedToNotifications => _decoratedNotificationsService.IsSubscribedToNotifications;
+
         private void UnregisterFromPushBackgroundTask()
         {
             if (BackgroundTaskRegistration.AllTasks.All(x => x.Value.Name != BackgroundTaskName))
