@@ -71,14 +71,14 @@ namespace MvvmCross.Plugins.Notifications.Samples.iOS
 	    {
 	        base.RegisteredForRemoteNotifications(application, deviceToken);
 
-	        MvxIoSNotificationsSetup.OnRegisterToPushSuccess(deviceToken);
+	        PushiOSNotificationsSetup.OnRegisterToPushSuccess(deviceToken);
 	    }
 
 	    public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
 	    {
 	        base.FailedToRegisterForRemoteNotifications(application, error);
 
-	        MvxIoSNotificationsSetup.OnRegisterToPushFailure(error);
+	        PushiOSNotificationsSetup.OnRegisterToPushFailure(error);
 	    }
 
 	    public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)

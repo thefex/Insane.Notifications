@@ -2,7 +2,7 @@
 using Android.App;
 using Android.Content;
 
-namespace MvvmCross.Plugins.Notifications.Droid.Extensions
+namespace Insane.Notifications.Droid.Extensions
 {
     public static class DroidNotificationExtensions
     {

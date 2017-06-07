@@ -34,3 +34,5 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("Insane.Notifications.UWP")]
 [assembly: InternalsVisibleTo("Insane.Notifications.Droid.GCM")]
 [assembly: InternalsVisibleTo("Insane.Notifications.Droid.Local")]
+[assembly: InternalsVisibleTo("Insane.Notifications.Droid.MvxGCM")]
+[assembly: InternalsVisibleTo("Insane.Notifications.Droid.MvxLocal")]

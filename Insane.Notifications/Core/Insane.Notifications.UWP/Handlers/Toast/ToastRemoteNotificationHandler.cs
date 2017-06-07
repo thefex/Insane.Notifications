@@ -4,7 +4,7 @@ namespace Insane.Notifications.UWP.Handlers.Toast
 {
     public abstract class ToastRemoteNotificationHandler
     {
-        public bool HandleToastNotification(ToastNotification toastNotification)
+        public virtual bool HandleToastNotification(ToastNotification toastNotification)
         {
             toastNotification.Activated += ToastNotification_Activated;
             return !ShouldShowDefaultToast;

@@ -12,7 +12,7 @@ namespace MvvmCross.Plugins.Notifications.Samples.Droid.Services.LocalNotificati
 {
     // Add [Service] attribute so your AndroidManifest gets updated.
     [Service]
-    public class AppLocalNotificationsService : MvxDroidLocalNotificationService<LocalNotificationData>
+    public class AppLocalNotificationsService : DroidLocalNotificationService<LocalNotificationData>
     {
         public AppLocalNotificationsService(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
         {

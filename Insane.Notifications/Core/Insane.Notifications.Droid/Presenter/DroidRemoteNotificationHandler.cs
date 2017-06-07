@@ -1,10 +1,10 @@
 ﻿using System;
 using Android.Content;
+using Insane.Notifications.Droid.Extensions;
+using Insane.Notifications.Droid.NotificationsBuilder;
 using Insane.Notifications.Presenter.Handlers;
-using MvvmCross.Plugins.Notifications.Droid.NotificationsBuilder;
-using MvvmCross.Plugins.Notifications.Droid.Extensions;
 
-namespace MvvmCross.Plugins.Notifications.Droid.Presenter
+namespace Insane.Notifications.Droid.Presenter
 {
     public abstract class DroidRemoteNotificationHandler<TNotification> : RemoteNotificationHandler<TNotification>
         where TNotification : class
@@ -25,6 +25,6 @@ namespace MvvmCross.Plugins.Notifications.Droid.Presenter
             return true;
         }
 
-        protected abstract IMvxDroidNotificationBuilder<TNotification> GetNotificationBuilder();
+        protected abstract IDroidNotificationBuilder<TNotification> GetNotificationBuilder();
     }
 }

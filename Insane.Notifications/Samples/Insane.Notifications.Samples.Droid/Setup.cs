@@ -23,12 +23,12 @@ namespace MvvmCross.Plugins.Notifications.Samples.Droid
             base.InitializeLastChance();
 
             Mvx
-                .RegisterType<MvxDroidNotificationCompatBuilder<LocalNotificationData>, LocalNotificationDataNotificationBuilder>();
+                .RegisterType<DroidNotificationCompatBuilder<LocalNotificationData>, LocalNotificationDataNotificationBuilder>();
 
             Mvx
                 .RegisterType<INotificationsService>(
                     () =>
-                    new MvxPeriodicLocalNotificationsService<AppLocalNotificationsPeriodicUpdateAlarmReceiver, AppLocalNotificationsService, LocalNotificationData>(ApplicationContext, TimeSpan.FromSeconds(60)));
+                    new PeriodicLocalNotificationsService<AppLocalNotificationsPeriodicUpdateAlarmReceiver, AppLocalNotificationsService, LocalNotificationData>(ApplicationContext, TimeSpan.FromSeconds(60)));
         }
 
         protected override IMvxApplication CreateApp()

@@ -30,6 +30,8 @@ namespace Insane.Notifications.PushNotifications
 
         protected abstract bool IsUserRegisteredToPushService { get; }
 
+        public bool IsSubscribedToNotifications => IsUserRegisteredToPushService;
+
         public async Task<ServiceResponse> SubscribeToNotifications(bool forceSubscribe = false)
         {
 			try
@@ -41,14 +43,34 @@ namespace Insane.Notifications.PushNotifications
 
 				_registerPushTcs = new TaskCompletionSource<ServiceResponse<string>>();
 				var registrationLaunchProcessResponse = await LaunchRegistrationProcess(forceSubscribe);
-				if (!registrationLaunchProcessResponse.IsSuccess)
-					return registrationLaunchProcessResponse;
+                if (!registrationLaunchProcessResponse.IsSuccess)
+                    return registrationLaunchProcessResponse;
 
-				var deviceRegistrationHandleResponse = await _registerPushTcs.Task.ConfigureAwait(false);
-				if (!deviceRegistrationHandleResponse.IsSuccess)
-					return deviceRegistrationHandleResponse;
+			    try
+			    {
+			        var deviceRegistrationHandleResponse = await _registerPushTcs.Task.ConfigureAwait(false);
+			        if (!deviceRegistrationHandleResponse.IsSuccess)
+			        {
+			            await LaunchUnregistrationProcess();
+			            return deviceRegistrationHandleResponse;
+			        }
 
-				return await SubscribeToPushNotifications(deviceRegistrationHandleResponse.Result).ConfigureAwait(false);
+			        var subscribeResponse = await SubscribeToPushNotifications(deviceRegistrationHandleResponse.Result)
+			            .ConfigureAwait(false);
+
+			        if (!subscribeResponse.IsSuccess)
+			        {
+			            await LaunchUnregistrationProcess();
+			            return subscribeResponse;
+			        }
+
+			        return subscribeResponse;
+			    }
+			    catch (Exception)
+			    {
+			        await LaunchUnregistrationProcess();
+			        throw;
+			    }
 			}
 			finally
 			{
@@ -161,21 +183,21 @@ namespace Insane.Notifications.PushNotifications
 
         protected virtual string ParsePushHandle(string pushHandle) => pushHandle.Trim(' ', '<', '>').Replace(" ", "");
 
-        internal void NotifyThatRegistrationSucceed(string result) => _registerPushTcs?.SetResult(ServiceResponse<string>.Build(result));
+        public void NotifyThatRegistrationSucceed(string result) => _registerPushTcs?.SetResult(ServiceResponse<string>.Build(result));
 
-        internal void NotifyThatRegistrationFailed(Exception withException)
+        public void NotifyThatRegistrationFailed(Exception withException)
             => _registerPushTcs?.SetException(withException);
 
-        internal void NotifyThatRegistrationFailed(string errorMsg) => _registerPushTcs?.SetResult(
+        public void NotifyThatRegistrationFailed(string errorMsg) => _registerPushTcs?.SetResult(
             new ServiceResponse<string>().AddErrorMessage(errorMsg));
 
-        internal void NotifyThatUnregistrationSucceed()
+        public void NotifyThatUnregistrationSucceed()
             => _unregisterPushTcs?.SetResult(new ServiceResponse());
 
-        internal void NotifyThatUnregistrationFailed(Exception withException)
+        public void NotifyThatUnregistrationFailed(Exception withException)
             => _unregisterPushTcs?.SetException(withException);
 
-        internal void NotifyThatUnregistrationFailed(string errorMsg)
+        public void NotifyThatUnregistrationFailed(string errorMsg)
             => _unregisterPushTcs?.SetResult(new ServiceResponse().AddErrorMessage(errorMsg));
     }
 }

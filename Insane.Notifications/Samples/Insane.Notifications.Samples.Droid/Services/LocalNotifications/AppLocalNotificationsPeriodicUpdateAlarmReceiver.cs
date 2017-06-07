@@ -8,7 +8,7 @@ namespace MvvmCross.Plugins.Notifications.Samples.Droid.Services.LocalNotificati
 {
     // Add [BroadcastReceiver] attribute so your AndroidManifest gets updated.
     [BroadcastReceiver]
-    public class AppLocalNotificationsPeriodicUpdateAlarmReceiver : MvxPeriodicUpdateAlarmReceiver<AppLocalNotificationsService, LocalNotificationData>
+    public class AppLocalNotificationsPeriodicUpdateAlarmReceiver : PeriodicUpdateAlarmReceiver<AppLocalNotificationsService, LocalNotificationData>
     {
         public AppLocalNotificationsPeriodicUpdateAlarmReceiver(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
         {

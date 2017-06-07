@@ -157,7 +157,6 @@ namespace Insane.Notifications.iOS.Presenter
         {
             InitializeIfNeeded();
 
-
             _notificationTappedHandler.HandleNotificationTapped(notificationResponse);
         }
     }

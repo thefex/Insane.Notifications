@@ -7,5 +7,7 @@ namespace Insane.Notifications
     {
         Task<ServiceResponse> SubscribeToNotifications(bool forceSubscribe = false);
         Task<ServiceResponse> UnsubscribeFromNotifications();
+
+        bool IsSubscribedToNotifications { get; }
     }
 }

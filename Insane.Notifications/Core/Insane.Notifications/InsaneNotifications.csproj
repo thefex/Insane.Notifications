@@ -57,6 +57,7 @@
     <Compile Include="Presenter\Handlers\IRemoteNotificationTapAction.cs" />
     <Compile Include="Presenter\Handlers\RemoteNotificationTapAction.cs" />
     <Compile Include="Presenter\RemoteNotificationIdProvider.cs" />
+    <Compile Include="CachedStorage\DefaultPersistedStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

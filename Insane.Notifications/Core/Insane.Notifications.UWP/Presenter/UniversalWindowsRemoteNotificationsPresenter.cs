@@ -144,6 +144,17 @@ namespace Insane.Notifications.UWP.Presenter
         {
             InitializeIfNeeded();
 
+            if (RemoteNotificationHandlers.ContainsKey(launchArgument))
+            {
+                var tapActionHandler = RemoteNotificationHandlers[launchArgument] as IRemoteNotificationTapAction;
+
+                if (tapActionHandler != null)
+                {
+                    tapActionHandler.OnNotificationTapped(launchArgument);
+                    return;
+                }
+            }
+
             if (!LaunchArgumentSerializator.IsPushServicesLaunchArgumentFormat(launchArgument))
                 return;
 
@@ -160,7 +171,6 @@ namespace Insane.Notifications.UWP.Presenter
                     remoteNotifcationTapAction?.OnNotificationTapped(notificationData);
                 }
             }
-
         }
 
         public event Action<ToastNotification> ToastNotificationPublished;

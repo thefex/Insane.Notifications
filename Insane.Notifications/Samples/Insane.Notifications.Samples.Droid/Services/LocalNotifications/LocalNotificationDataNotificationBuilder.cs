@@ -7,7 +7,7 @@ using MvvmCross.Plugins.Notifications.Sample.Portable.Data;
 
 namespace MvvmCross.Plugins.Notifications.Samples.Droid.Services.LocalNotifications
 {
-    class LocalNotificationDataNotificationBuilder : MvxDroidNotificationCompatBuilder<LocalNotificationData>
+    class LocalNotificationDataNotificationBuilder : DroidNotificationCompatBuilder<LocalNotificationData>
     {
         protected override Type GetPendingIntentActivityType()
         {

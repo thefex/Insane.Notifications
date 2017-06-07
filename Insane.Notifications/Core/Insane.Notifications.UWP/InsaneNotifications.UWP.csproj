@@ -117,6 +117,7 @@
     <Compile Include="Handlers\Toast\IToastRemoteNotificationHandlerIdProvider.cs" />
     <Compile Include="Internal\PushBackgroundTaskNotificationServiceDecorator.cs" />
     <Compile Include="Internal\PushInvalidateRegistrationAppUpdateBackgroundTaskNotificationsServiceDecorator.cs" />
+    <Compile Include="Internal\ValueTypeWrapper.cs" />
     <Compile Include="LaunchArgumentSerializator.cs" />
     <Compile Include="Presenter\IUniversalWindowsRemoteNotificationsPresenter.cs" />
     <Compile Include="Presenter\UniversalWindowsPresenterConfiguration.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="PushServicesExtensions.cs" />
     <Compile Include="UniversalWindowsRemotePushNotificationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage\UWPDefaultPersistedStorage.cs" />
     <Compile Include="UWPRemotePushNotificationsService.cs" />
     <EmbeddedResource Include="Properties\InsaneNotifications.UWP.rd.xml" />
   </ItemGroup>
