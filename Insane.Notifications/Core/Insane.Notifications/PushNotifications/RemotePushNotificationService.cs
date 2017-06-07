@@ -175,21 +175,21 @@ namespace Insane.Notifications.PushNotifications
 
         protected virtual string ParsePushHandle(string pushHandle) => pushHandle.Trim(' ', '<', '>').Replace(" ", "");
 
-        internal void NotifyThatRegistrationSucceed(string result) => _registerPushTcs?.SetResult(ServiceResponse<string>.Build(result));
+        public void NotifyThatRegistrationSucceed(string result) => _registerPushTcs?.SetResult(ServiceResponse<string>.Build(result));
 
-        internal void NotifyThatRegistrationFailed(Exception withException)
+        public void NotifyThatRegistrationFailed(Exception withException)
             => _registerPushTcs?.SetException(withException);
 
-        internal void NotifyThatRegistrationFailed(string errorMsg) => _registerPushTcs?.SetResult(
+        public void NotifyThatRegistrationFailed(string errorMsg) => _registerPushTcs?.SetResult(
             new ServiceResponse<string>().AddErrorMessage(errorMsg));
 
-        internal void NotifyThatUnregistrationSucceed()
+        public void NotifyThatUnregistrationSucceed()
             => _unregisterPushTcs?.SetResult(new ServiceResponse());
 
-        internal void NotifyThatUnregistrationFailed(Exception withException)
+        public void NotifyThatUnregistrationFailed(Exception withException)
             => _unregisterPushTcs?.SetException(withException);
 
-        internal void NotifyThatUnregistrationFailed(string errorMsg)
+        public void NotifyThatUnregistrationFailed(string errorMsg)
             => _unregisterPushTcs?.SetResult(new ServiceResponse().AddErrorMessage(errorMsg));
     }
 }

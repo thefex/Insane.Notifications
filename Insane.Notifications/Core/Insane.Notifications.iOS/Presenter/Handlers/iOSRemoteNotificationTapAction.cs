@@ -8,31 +8,31 @@ namespace Insane.Notifications.iOS.Presenter.Handlers
     {
         public sealed override void OnNotificationTapped(string notificationDataJson)
         {
-
+            ExecuteOnNotificationTapped(JsonConvert.DeserializeObject<TNotificationData>(notificationDataJson));
         }
 
-        public abstract void OnNotificationTapped(TNotificationData notificationData);
+        public abstract void ExecuteOnNotificationTapped(TNotificationData notificationData);
 
         public sealed override void OnNotificationDismissed(string notificationDataJson, UNNotificationResponse notificationResponse)
         {
             base.OnNotificationDismissed(notificationDataJson, notificationResponse);
             var deserializedObject = JsonConvert.DeserializeObject<TNotificationData>(notificationDataJson);
-            OnNotificationDismissed(deserializedObject, notificationResponse);
+            ExecuteOnNotificationDismissed(deserializedObject, notificationResponse);
         }
 
-        public virtual void OnNotificationDismissed(TNotificationData notificationData, UNNotificationResponse notificationResponse)
+        public virtual void ExecuteOnNotificationDismissed(TNotificationData notificationData, UNNotificationResponse notificationResponse)
         {
-
+            
         }
 
         public sealed override void OnNotificationTappedWithAction(string actionId, string notificationDataJson, UNNotificationResponse notificationResponse)
         {
             base.OnNotificationTappedWithAction(actionId, notificationDataJson, notificationResponse);
             var deserializedObject = JsonConvert.DeserializeObject<TNotificationData>(notificationDataJson);
-            OnNotificationTappedWithAction(actionId, deserializedObject, notificationResponse);
+            ExecuteOnNotificationTappedWithAction(actionId, deserializedObject, notificationResponse);
         }
 
-        public virtual void OnNotificationTappedWithAction(string actionId, TNotificationData notificationData, UNNotificationResponse notificationResponse)
+        public virtual void ExecuteOnNotificationTappedWithAction(string actionId, TNotificationData notificationData, UNNotificationResponse notificationResponse)
         {
 
         }

@@ -1,4 +1,6 @@
 ﻿using Foundation;
+using Insane.Notifications.iOS;
+using Insane.Notifications.PushNotifications;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
@@ -69,6 +71,16 @@ namespace Insane.Notifications.PushSample.iOS
         {
             // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
         }
+
+		public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+		{
+            PushiOSNotificationsSetup.OnRegisterToPushSuccess(Mvx.Resolve<RemotePushNotificationService>(), deviceToken);
+		}
+
+		public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+		{
+            PushiOSNotificationsSetup.OnRegisterToPushFailure(Mvx.Resolve<RemotePushNotificationService>(), error);
+		}
     }
 }
 

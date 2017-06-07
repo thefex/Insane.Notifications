@@ -6,10 +6,11 @@ using Insane.Notifications.PushSample.Portable.ViewModels;
 using System;
 using Android.Runtime;
 using Insane.Notifications.Droid.Extensions;
+using Android.Content.PM;
 
 namespace Insane.Notifications.PushSample.Droid
 {
-    [Activity(Label = "Insane.Notifications.PushSample.Droid", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(MainLauncher = true, Theme = "@style/appTheme", ClearTaskOnLaunch = true, LaunchMode = LaunchMode.SingleTask)]
     public class MainActivity : MvxCachingFragmentCompatActivity<MainViewModel>
     {
         public MainActivity(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
@@ -26,7 +27,7 @@ namespace Insane.Notifications.PushSample.Droid
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
 
-			Intent?.Extras?.HandlePushDataIfExists();
+            Intent?.Extras?.HandlePushDataIfExists();
 		}
 
 		protected override void OnNewIntent(Android.Content.Intent intent)

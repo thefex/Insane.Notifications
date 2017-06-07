@@ -27,14 +27,17 @@ namespace Insane.Notifications.PushSample.iOS
         {
             base.InitializeLastChance();
 
-            Mvx.RegisterSingleton<INotificationsService>(() => {
+            Mvx.RegisterSingleton<RemotePushNotificationService>(() => {
 				var pushTagsProvider = Mvx.Resolve<IPushTagsProvider>();
 				var remotePushRegistrationService = Mvx.Resolve<IRemotePushRegistrationService>();
 
                 return new iOSRemotePushNotificationServiceIos(remotePushRegistrationService, pushTagsProvider);
             });
 
+            Mvx.RegisterSingleton<INotificationsService>(() => Mvx.Resolve<RemotePushNotificationService>());
+
             Mvx.RegisterSingleton<IRemoteNotificationIdProvider>(() => new AppNotificationsIdProvider());
+
             Mvx.RegisterSingleton<IIOSRemoteNotificationsPresenter>(() => new iOSRemoteNotificationPresenter(
                 Mvx.Resolve<IRemoteNotificationIdProvider>(),
                 typeof(AppSetup).Assembly

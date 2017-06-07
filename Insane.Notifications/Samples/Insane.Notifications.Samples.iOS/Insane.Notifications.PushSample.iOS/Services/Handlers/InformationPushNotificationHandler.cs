@@ -18,7 +18,7 @@ namespace Insane.Notifications.PushSample.iOS.Services.Handlers
 			return true;
 		}
 
-        public override void OnNotificationTapped(APNSPushData<PushData> notificationData)
+        public override void ExecuteOnNotificationTapped(APNSPushData<PushData> notificationData)
         {
 			var userDialogs = Mvx.Resolve<IUserDialogs>();
             userDialogs.Alert("You have tapped notification!", notificationData.Data.Title);

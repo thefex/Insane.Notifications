@@ -4,9 +4,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:drawable="@drawable/il1" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
         local:MvxBind="Text IsRegisteredToPush, Converter=PushStateToText" />
     <Button
         android:id="@+id/myButton"

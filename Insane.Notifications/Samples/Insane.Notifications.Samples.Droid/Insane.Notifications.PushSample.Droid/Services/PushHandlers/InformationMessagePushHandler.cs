@@ -10,6 +10,7 @@ using MvvmCross.Platform;
 using Android.Media;
 using Insane.Notifications.Droid.Presenter;
 using Insane.Notifications.Droid.NotificationsBuilder;
+using Newtonsoft.Json;
 
 namespace Insane.Notifications.PushSample.Droid.Services.PushHandlers
 {
@@ -54,12 +55,13 @@ namespace Insane.Notifications.PushSample.Droid.Services.PushHandlers
 
         class InformationMessageTapActionHandler : RemoteNotificationTapAction<PushData>
 		{
-			public override void OnNotificationTapped(PushData notificationData)
+
+            public override void OnNotificationTapped(PushData notificationData)
             {
-                var userDialogs = Mvx.Resolve<IUserDialogs>();
-                userDialogs.Alert("You have clicked at PUSH!", notificationData.Title);
+				var userDialogs = Mvx.Resolve<IUserDialogs>();
+				userDialogs.Alert("You have clicked at PUSH!", notificationData.Title);
             }
-		}
+        }
     }
  
 
