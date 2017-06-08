@@ -2,20 +2,23 @@
 Xamarin plugin to handle notifications with ease.
 
 # Get it on NuGet
-Prerelease package is available on my nuget - https://www.nuget.org/profiles/thefex
-InsaneNotifications.* (platform)
+Nuget packages are available on my nuget - https://www.nuget.org/profiles/thefex
+
+To use with:
+1. Android GCM - Install-Package Insane.Notifications.Droid.GCM (for MvvmCross go with: Insane.Notifications.Droid.MvxGCM)
+2. iOS - Install-Package Insane.Notifications.iOS
+3. UWP - Install-Package Insane.Notifications.UWP
+4. Portable project - Install.Package Insane.Notifications
 
 # Changelog
-1.0.0-prerelease
-- initial library release
+1.0.0
+- official, initial library release
 
 # Things TODO - "ROADMAP sorted by importance"
-1. Remove tight coupling with MvvmCross and release Mvx support as separated package. [WIP]
-2. Implement PUSH (GCM/UWP/APNS) sample. [WIP]
-3. Write PUSH related servies documentation. [WIP]
-4. Implement iOS Local Notifications
-5. Improve Android Local Notifications sample
-6. Write Local Notifications documentation.
+1. Implement iOS Local Notifications
+2. Improve Android Local Notifications sample
+3. Write Local Notifications documentation.
+4. Add FCM support
 
 # Sample - PUSH Notifications - Azure Notification Hub Backend
 As current version is mainly focused on PUSH Based of Azure Notification Hubs I have prepared C# ASP.Net WebAPI sample project - implementation of Azure Notification Hub usage / push send.
@@ -28,6 +31,9 @@ https://github.com/thefex/Insane.Notifications/blob/master/Insane.Notifications/
 
 This API is also deployed here:
 http://xamarinpushplugintests.azurewebsites.net/swagger/ui/index
+
+# Documentation
+Library documentation will be available on Friday (9June 2017) as powerpoint presentation (it is gonna be presented on Xamarin local DevDays 2017 - Warsaw)
 
 # Acknowledgment 
 This library has been created thanks to help and support from InsaneLab.com (http://www.insanelab.com).
