@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{3C91EC
 	ProjectSection(SolutionItems) = preProject
 		nuspec\InsaneNotifications.Droid.GCM.nuspec = nuspec\InsaneNotifications.Droid.GCM.nuspec
 		nuspec\InsaneNotifications.Droid.Local.nuspec = nuspec\InsaneNotifications.Droid.Local.nuspec
+		nuspec\InsaneNotifications.Droid.MvxGCM.nuspec = nuspec\InsaneNotifications.Droid.MvxGCM.nuspec
 		nuspec\InsaneNotifications.Droid.nuspec = nuspec\InsaneNotifications.Droid.nuspec
 		nuspec\InsaneNotifications.iOS.nuspec = nuspec\InsaneNotifications.iOS.nuspec
 		nuspec\InsaneNotifications.nuspec = nuspec\InsaneNotifications.nuspec

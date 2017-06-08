@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="3.2">
+    <title>Insane.Notifications.Droid.MvxGCM</title>
+    <id>Insane.Notifications.Droid.MvxGCM</id>
+    <version>1.0.0</version>
+    <authors>InsaneLab.com, Przemysław Raciborski [thefex] with help of Erlend Angelsen [erlend]</authors>
+    <description>
+      Xamarin library for creating and handling Notifications and things related to PUSH made with passion in InsaneLab.com.
+      Package provides MvvmCross support for PUSH Notification Services for Android GCM.
+    </description>
+    <iconUrl>https://github.com/thefex/Insane.Notifications/raw/master/Insane.Notifications/il2.png</iconUrl>
+    <dependencies>
+      <group targetFramework="MonoAndroid71">
+        <dependency id="Insane.Notifications.Droid.GCM" version="1.0.0"/>
+        <dependency id="MvvmCross.Binding" version="5.0.1" />
+        <dependency id="MvvmCross.Core" version="5.0.1" />
+        <dependency id="MvvmCross.Droid.Shared" version="5.0.1" />
+        <dependency id="MvvmCross.Droid.Support.Core.UI" version="5.0.1" />
+        <dependency id="MvvmCross.Droid.Support.Core.Utils" version="5.0.1" />
+        <dependency id="MvvmCross.Platform" version="5.0.1"/>
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\Implementations\Insane.Notifications.Droid.MvxGCM\bin\Release\Insane.Notifications.Droid.MvxGCM.dll" target="lib\MonoAndroid71" />
+  </files>
+</package>
