@@ -33,7 +33,8 @@ This API is also deployed here:
 http://xamarinpushplugintests.azurewebsites.net/swagger/ui/index
 
 # Documentation
-Library documentation will be available on Friday (9June 2017) as powerpoint presentation (it is gonna be presented on Xamarin local DevDays 2017 - Warsaw)
+Library documentation/presentation is available here:
+https://github.com/thefex/Insane.Notifications/blob/master/InsaneLabDocumentationPresentation.pdf
 
 # Acknowledgment 
 This library has been created thanks to help and support from InsaneLab.com (http://www.insanelab.com).
