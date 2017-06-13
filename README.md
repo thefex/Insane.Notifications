@@ -34,7 +34,7 @@ http://xamarinpushplugintests.azurewebsites.net/swagger/ui/index
 
 # Documentation
 Library documentation/presentation is available here:
-https://github.com/thefex/Insane.Notifications/blob/master/InsaneLabDocumentationPresentation.pdf
+https://github.com/thefex/Insane.Notifications/blob/master/InsaneNotificationsPresentation.pdf
 
 # Acknowledgment 
 This library has been created thanks to help and support from InsaneLab.com (http://www.insanelab.com).
