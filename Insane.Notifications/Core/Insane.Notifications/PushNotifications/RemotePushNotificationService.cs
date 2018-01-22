@@ -48,15 +48,14 @@ namespace Insane.Notifications.PushNotifications
 
 			    try
 			    {
-			        var deviceRegistrationHandleResponse = await _registerPushTcs.Task.ConfigureAwait(false);
+                    var deviceRegistrationHandleResponse = await _registerPushTcs.Task;
 			        if (!deviceRegistrationHandleResponse.IsSuccess)
 			        {
 			            await LaunchUnregistrationProcess();
 			            return deviceRegistrationHandleResponse;
 			        }
 
-			        var subscribeResponse = await SubscribeToPushNotifications(deviceRegistrationHandleResponse.Result)
-			            .ConfigureAwait(false);
+                    var subscribeResponse = await SubscribeToPushNotifications(deviceRegistrationHandleResponse.Result);
 
 			        if (!subscribeResponse.IsSuccess)
 			        {
@@ -92,8 +91,8 @@ namespace Insane.Notifications.PushNotifications
                 if (!unregistrationLaunchProcessResponse.IsSuccess)
                     return unregistrationLaunchProcessResponse;
 
-                await _unregisterPushTcs.Task.ConfigureAwait(false);
-                return await UnsubscribeFromPushNotifications().ConfigureAwait(false);
+                await _unregisterPushTcs.Task;
+                return await UnsubscribeFromPushNotifications();
             }
             finally
             {
@@ -108,25 +107,23 @@ namespace Insane.Notifications.PushNotifications
 
         protected async Task<ServiceResponse> SubscribeToPushNotifications(string deviceHandle)
         {
-            var getDeviceRegistrationIdResponse = await GetDeviceRegistrationId(deviceHandle).ConfigureAwait(false);
+            var getDeviceRegistrationIdResponse = await GetDeviceRegistrationId(deviceHandle);
 
             if (!getDeviceRegistrationIdResponse.IsSuccess)
                 return getDeviceRegistrationIdResponse;
 
             var subscribeToPushResponse =
                 await
-                    UpdateDeviceRegistration(getDeviceRegistrationIdResponse.Result, deviceHandle)
-                        .ConfigureAwait(false);
+                UpdateDeviceRegistration(getDeviceRegistrationIdResponse.Result, deviceHandle);
 
             if (subscribeToPushResponse.IsSuccess)
                 return subscribeToPushResponse;
 
             var newDeviceRegistrationId =
-                await GetDeviceRegistrationId(deviceHandle, true)
-                    .ConfigureAwait(false);
+                await GetDeviceRegistrationId(deviceHandle, true);
+
             subscribeToPushResponse =
-                await UpdateDeviceRegistration(newDeviceRegistrationId.Result, deviceHandle)
-                    .ConfigureAwait(false);
+                await UpdateDeviceRegistration(newDeviceRegistrationId.Result, deviceHandle);
 
             return subscribeToPushResponse;
         }
@@ -153,7 +150,7 @@ namespace Insane.Notifications.PushNotifications
             if (!hasDeviceRegistrationId || forceReplaceCacheValue)
             {
                 var deviceRegistrationIdResponse =
-                    await _remotePushRegistrationService.RegisterDevice(deviceHandle).ConfigureAwait(false);
+                    await _remotePushRegistrationService.RegisterDevice(deviceHandle);
 
                 if (!deviceRegistrationIdResponse.IsSuccess)
                     return deviceRegistrationIdResponse;
